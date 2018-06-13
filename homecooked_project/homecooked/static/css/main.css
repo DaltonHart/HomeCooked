@@ -2,17 +2,17 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
+
 header{
-    position: relative;
     color: white;
     background-color: black;
     display: grid;
-    height: 5em;
+    height: 10vh;
 }
 .login {
- grid-row: 1/1;
+ grid-row: 1/2;
  grid-column: 4/5;
- padding: 1.4em .3em .2em;
+ padding: 1.4em .6em .2em;
  margin: 0;
  text-align: right;
  font-size: 1.5em;
@@ -21,7 +21,7 @@ header{
     margin: 0;
 }
 nav {
- grid-row: 1/1;
+ grid-row: 1/2;
  grid-column: 1/2;
 }
 .logo p{
@@ -30,4 +30,103 @@ nav {
     font-size: 2.7em;
     font-display: bottom;
     font-family: 'Amatic SC', cursive;
+}
+
+.overview {
+    display: grid;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.overview h3{
+    margin: 0;
+    padding: 0;
+}
+.cook {
+    display: grid;
+    height: 90vh;
+    background-image: url(/static/images/cookOver.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: blue;
+}
+.customer{
+    display: grid;
+    background-image: url(/static/images/customerOver.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    background-color: red;
+    height: 90vh;
+}
+
+.cook .catcher{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 1em;
+    color: white;
+}
+.catcher .bottomLine{
+    grid-row: 3/4;
+    padding-top: 80%;
+    font-size: 4em;
+    text-shadow: 2px 2px 4px #000000;
+}
+.catcher .topLine{
+    grid-row: 1/2;
+    font-size: 5em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.cook .detail {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    padding: 2em;
+}
+
+.customer .catcher{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    padding: 1em;
+    text-align: right;
+    color: white;
+}
+
+.customer .detail {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding: 2em;
+}
+
+.detail {
+    display: grid;
+}
+.area1 , .area2, .area3 {
+    display: grid;
+}
+.detail img{
+    grid-column: 1/2;
+    margin: 0;
+    width: 25vh;
+    height: 25vh;
+}
+.detail p{
+    grid-column: 2/3;
+    margin: 1em;
+    padding: 1em;
+    background: white;
+    overflow-wrap: break-word;
+    width: 35vh;
+}
+
+.area2 img {
+    grid-column: 2/3;
+    grid-row: 1/1;
+}
+.area2 p{
+    grid-column: 1/2;
+    grid-row: 1/1;
 }
