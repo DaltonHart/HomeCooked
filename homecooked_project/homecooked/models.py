@@ -10,7 +10,7 @@ class Profile(models.Model):
 	name = models.CharField(blank=True, max_length=255)
 	avatar = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	bio = models.TextField()
-	iscook = models.CharField(blank=True, max_length=5)
+	iscook = models.BooleanField(default=False)
 	address = models.TextField()
 
 
