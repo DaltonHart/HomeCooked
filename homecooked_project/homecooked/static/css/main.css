@@ -2,12 +2,16 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
-
+main{
+    padding-top: 10vh;
+}
 header{
     color: white;
-    background-color: black;
+    background-color:black;
     display: grid;
     height: 10vh;
+    position: fixed;
+    width: 100%;
 }
 .login {
  grid-row: 1/2;
@@ -35,7 +39,6 @@ nav {
 .overview {
     display: grid;
     min-width: 100%;
-    margin: 0;
     padding: 0;
 }
 
@@ -56,7 +59,7 @@ nav {
     display: grid;
     background-image: url(/static/images/customerOver.jpg);
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: 100%;
     background-color: red;
     height: 90vh;
@@ -71,7 +74,7 @@ nav {
 }
 .catcher .bottomLine{
     grid-row: 3/4;
-    padding-top: 80%;
+    padding-top: 70%;
     font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
 }
@@ -112,6 +115,7 @@ nav {
     margin: 0;
     width: 25vh;
     height: 25vh;
+    box-shadow: 2px 2px 4px #000000;
 }
 .detail p{
     grid-column: 2/3;
@@ -120,6 +124,7 @@ nav {
     background: white;
     overflow-wrap: break-word;
     width: 35vh;
+    box-shadow: 2px 2px 4px #000000;
 }
 
 .area2 img {
