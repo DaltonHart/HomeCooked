@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+header{
+    position: relative;
+    color: white;
+    background-color: black;
+    display: grid;
+    height: 5em;
+}
+.login {
+ grid-row: 1/1;
+ grid-column: 4/5;
+ padding: 1.4em .3em .2em;
+ margin: 0;
+ text-align: right;
+ font-size: 1.5em;
+}
+.login p{
+    margin: 0;
+}
+nav {
+ grid-row: 1/1;
+ grid-column: 1/2;
+}
+.logo p{
+    margin: 0;
+    padding: .2em .3em;
+    font-size: 2.7em;
+    font-display: bottom;
+    font-family: 'Amatic SC', cursive;
+}
