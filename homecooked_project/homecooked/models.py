@@ -26,7 +26,7 @@ class Kitchen(models.Model):
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)
 	address = models.TextField()
-	rating = models.IntegerField(max)
+	rating = models.IntegerField(max, null=True, blank=True)
 	doesDeliver = models.CharField(blank=True, max_length=5)
 
 
