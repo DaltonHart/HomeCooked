@@ -1,5 +1,9 @@
-{% extends 'homecooked/base.html' %} {% block content %}
+{% extends 'homecooked/base.html' %} 
 
+{% block content %}
+{% if user.is_authenticated %}
+<h2>you are logged in and content will be displayed here.</h2>
+{% else %}
 <section class="overview ">
 
     <div class="cook">
@@ -52,5 +56,5 @@
     </div>
     <span class="cd-handle"></span>
 </section>
-
+{% endif %}
 {% endblock %}
