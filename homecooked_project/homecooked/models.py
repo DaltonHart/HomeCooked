@@ -13,7 +13,6 @@ class Profile(models.Model):
 	iscook = models.BooleanField(default=False)
 	address = models.TextField()
 
-
 	def __str__(self):
 		return self.username
 
