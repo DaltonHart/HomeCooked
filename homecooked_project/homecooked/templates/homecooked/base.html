@@ -21,8 +21,11 @@
             {% block userinfo %}
             {% if user.is_authenticated %}
               <p>Welcome Back {{ user.username }}!</p>
+              <p><a href="{% url 'logout' %}">logout</a></p>
             {% else %}
               <p>Join the Party!</p>
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'signup' %}">Signup</a>
             {% endif %}
             {% endblock %}
         </section>
