@@ -1,7 +1,11 @@
 from django.contrib.auth.models import User, Group #getting models instance 
 from homecooked.models import Profile, Kitchen,Dish, Order
-from rest_framework import viewsets #getting viewsets
+from rest_framework import generics, permissions,viewsets #getting viewsets
 from .serializers import UserSerializer, GroupSerializer, ProfileSerializer,KitchenSerializer,DishSerializer,OrderSerializer
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from homecooked.api.permissions import IsOwnerOrReadOnly
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -32,6 +36,11 @@ class KitchenViewSet(viewsets.ModelViewSet):
     """
     queryset = Kitchen.objects.all()
     serializer_class = KitchenSerializer
+    permission_classes = (
+        permissions.IsAuthenticatedOrReadOnly,
+        IsOwnerOrReadOnly, )
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 class DishViewSet(viewsets.ModelViewSet):
     """
