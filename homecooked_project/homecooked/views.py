@@ -34,3 +34,7 @@ def profile_create(request):
     else:
         form = ProfileForm()
     return render(request, 'homecooked/profileform.html', {'form': form})
+
+def kitchen(request):
+    return render(request, 'homecooked/userIndex.html')
+

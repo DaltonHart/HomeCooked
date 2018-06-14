@@ -1,0 +1,48 @@
+.highest-rated {
+    display: flex;
+    text-align: center;
+    border: solid black 2px;
+    border-radius: .77em;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    .kitchen {
+        /* flex: 0 0 auto; */
+    }
+}
+
+.kitchen-name {
+    font-size: 1em
+}
+
+.kitchen-description {
+    font-size: .75em;
+}
+
+
+.kitchen-image {
+    height: 13em;
+    width: 12em;
+}
+
+.main-container {
+    /* background-image: url("https://img.okezone.com//content/2016/11/11/298/1539303/ternyata-ini-arti-piring-bersih-setelah-makan-di-beberapa-negara-Bz9YXO886K.jpg"); */
+    background-color: white;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.card-panel {
+    background-color: rgba(255,255,255,0.66);
+}
+
+.card-panel:hover {
+    background-color: rgba(255,255,255,1);
+}
