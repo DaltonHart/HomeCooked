@@ -2,10 +2,10 @@
     display: flex;
     text-align: center;
     border: solid black 2px;
-    border-radius: .77em;
-    flex-wrap: wrap;
-    width: 90%;
+    justify-content: space-between;
+    width: 95%;
     margin: 0 auto;
+    background-image: url("https://img.okezone.com//content/2016/11/11/298/1539303/ternyata-ini-arti-piring-bersih-setelah-makan-di-beberapa-negara-Bz9YXO886K.jpg");
 }
 
 .kitchen-name {
@@ -18,8 +18,8 @@
 
 
 .kitchen-image {
-    height: 13em;
-    width: 12em;
+    height: 15em;
+    width: 15em;
 }
 
 .main-container {
@@ -29,7 +29,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 h3 {
@@ -37,9 +38,24 @@ h3 {
 }
 
 .card-panel {
-    background-color: rgba(255,255,255,0.66);
+    background-color: rgba(255,255,255,0.55);
+    margin: 0 auto;
 }
+
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+    color: black !important;
+}
+/* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid black !important;
+    box-shadow: 0 1px 0 0 black !important;
+  }
 
 .card-panel:hover {
     background-color: rgba(255,255,255,1);
+}
+
+.autocomplete-div {
+    text-align: center;
 }
