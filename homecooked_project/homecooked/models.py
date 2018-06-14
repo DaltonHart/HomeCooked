@@ -3,6 +3,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.templatetags.static import static
 from django.conf import settings
 from django.db import models
+from django.core.validators import MaxValueValidator
 
 
 class Profile(models.Model):
@@ -25,8 +26,8 @@ class Kitchen(models.Model):
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)
 	address = models.TextField()
-	rating = models.IntegerField(max, null=True, blank=True)
-	does_deliver = models.CharField(blank=True, max_length=5)
+	rating = models.IntegerField( null=True, blank=True)
+	does_deliver = models.BooleanField(default=False)
 
 
 	def __str__(self):
@@ -58,7 +59,6 @@ class Order(models.Model):
 	order_from = models.ForeignKey(Kitchen, on_delete=models.CASCADE, related_name='order_from')
 	order_time = models.DateTimeField(auto_now_add=True)
 	items = ArrayField(models.CharField(blank=True, max_length=60))
-
 
 	def __str__(self):
 		return self.name
