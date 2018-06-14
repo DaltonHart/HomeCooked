@@ -1,1 +1,22 @@
-console.log('IM WORKING!')
+$(document).ready(function(){
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+});
+
+   
+
+
+
+
+

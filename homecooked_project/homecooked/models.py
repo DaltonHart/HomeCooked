@@ -60,7 +60,6 @@ class Order(models.Model):
 	order_time = models.DateTimeField(auto_now_add=True)
 	items = ArrayField(models.CharField(blank=True, max_length=60))
 
-
 	def __str__(self):
 		return self.name
 
