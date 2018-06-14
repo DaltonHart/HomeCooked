@@ -30,7 +30,7 @@ def profile_create(request):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
-            return redirect('landing')
+            return redirect('userIndex')
     else:
         form = ProfileForm()
     return render(request, 'homecooked/profileform.html', {'form': form})

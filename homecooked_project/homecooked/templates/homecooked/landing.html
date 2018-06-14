@@ -2,7 +2,10 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<h2>you are logged in and content will be displayed here.</h2>
+
+    {% block loggedin %}
+    {% endblock %}
+
 {% else %}
 <section class="overview ">
 

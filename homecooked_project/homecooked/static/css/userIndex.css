@@ -5,10 +5,8 @@
     justify-content: space-between;
     width: 95%;
     margin: 0 auto;
-<<<<<<< HEAD
-=======
     background-image: url("https://img.okezone.com//content/2016/11/11/298/1539303/ternyata-ini-arti-piring-bersih-setelah-makan-di-beberapa-negara-Bz9YXO886K.jpg");
->>>>>>> 7ad9a9cccda79ec820857bfb20cec2a84bb26f0d
+    overflow: scroll;
 }
 
 .kitchen-name {
