@@ -1,0 +1,24 @@
+.highest-rated {
+    display: flex;
+    text-align: center;
+    border: solid black 2px;
+    -webkit-overflow-scrolling: touch;
+
+    .kitchen {
+        /* flex: 0 0 auto; */
+    }
+}
+
+.kitchen-name {
+    font-size: 1em
+}
+
+.kitchen-description {
+    font-size: .75em;
+}
+
+
+.kitchen-image {
+    height: 13em;
+    width: 12em;
+}

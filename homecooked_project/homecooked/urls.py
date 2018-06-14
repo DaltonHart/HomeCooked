@@ -5,4 +5,6 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('', views.landing, name='landing'),
+    path('kitchens', views.kitchen, name='kitchen'),
 ]
+
