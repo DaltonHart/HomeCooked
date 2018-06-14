@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
+from .forms import registrationForm, ProfileForm
 
 # Create your views here.
 def landing(request):
@@ -10,15 +11,26 @@ def landing(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = registrationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('landing')
+            return redirect('profile')
     else:
-        form = UserCreationForm()
+        form = registrationForm()
     return render(request, 'homecooked/signup.html', {'form': form})
 
+def profile_create(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect('landing')
+    else:
+        form = ProfileForm()
+    return render(request, 'homecooked/profileform.html', {'form': form})

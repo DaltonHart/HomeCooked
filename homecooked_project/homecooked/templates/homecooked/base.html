@@ -15,7 +15,7 @@
 <body>
     <header>
         <section class="logo">
-            <p>Home Cooked</p>
+            <p><a href="{% url 'landing' %}">Home Cooked</a></p>
         </section>
         <section class="login">
             {% block userinfo %}
@@ -23,7 +23,7 @@
               <p>Welcome Back {{ user.username }}!</p>
               <p><a href="{% url 'logout' %}">logout</a></p>
             {% else %}
-              <p>Join the Party!</p>
+              <p>Start cooking and eating today.</p>
               <a href="{% url 'login' %}">Login</a>
               <a href="{% url 'signup' %}">Signup</a>
             {% endif %}
