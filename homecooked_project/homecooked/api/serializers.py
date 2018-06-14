@@ -3,6 +3,7 @@ from homecooked.models import Profile, Kitchen, Dish, Order
 from rest_framework import serializers
 
 
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
@@ -24,12 +25,16 @@ class KitchenSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
 
 class DishSerializer(serializers.HyperlinkedModelSerializer):
+    kitchen = serializers.ReadOnlyField(source='kitchen') 
     class Meta:
         model = Dish
         fields = ('kitchen', 'name','image', 'description', 'price', 'cuisine_type', 'dietary')
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    order_by = serializers.ReadOnlyField(source='owner') 
+    Kitchen  = serializers.ReadOnlyField(source='order_from') 
+
     class Meta:
         model = Order
         fields = ('order_by', 'order_from','order_time', 'items')
