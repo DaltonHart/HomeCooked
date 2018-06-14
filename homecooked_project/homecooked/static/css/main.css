@@ -54,6 +54,7 @@ nav {
     background-position: center;
     background-size: 100%;
     background-color: blue;
+    width: 100%;
 }
 .customer{
     display: grid;
@@ -63,6 +64,7 @@ nav {
     background-size: 100%;
     background-color: red;
     height: 90vh;
+    width: 100%;
 }
 
 .cook .catcher{
@@ -135,3 +137,4 @@ nav {
     grid-column: 1/2;
     grid-row: 1/1;
 }
+

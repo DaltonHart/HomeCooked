@@ -1,1 +1,3 @@
-console.log('IM WORKING!')
+jQuery(document).ready(function($){
+  
+});
