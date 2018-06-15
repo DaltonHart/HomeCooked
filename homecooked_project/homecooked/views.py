@@ -37,8 +37,10 @@ def profile_create(request):
     return render(request, 'homecooked/profileform.html', {'form': form})
 
 def user_profile(request, pk):
-    profile = Profile.objects.get(id=pk)
-    return render(request, 'homecooked/userProfile.html', {'profile': profile})
+    user = request.user
+    found_profile = Profile.objects.filter(user = user).first()
+    print("found Profile", found_profile)
+    return render(request, 'homecooked/userProfile.html', {'profile': found_profile})
 
 def kitchens(request):
     print('CALLING KITCHEN')
