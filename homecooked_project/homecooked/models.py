@@ -15,7 +15,7 @@ class Profile(models.Model):
 	address = models.TextField()
 
 	def __str__(self):
-		return self.username
+		return self.name
 
 	class Meta:
 		ordering = ['name']
@@ -43,7 +43,7 @@ class Dish(models.Model):
 	description = models.TextField(max_length=140)
 	price = models.FloatField()
 	cuisine_type = models.CharField(max_length=15) 
-	dietary = ArrayField(models.CharField(max_length=10))
+	dietary = ArrayField(models.CharField(max_length=10), null=True)
 
 
 	def __str__(self):

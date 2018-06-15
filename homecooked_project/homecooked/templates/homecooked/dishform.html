@@ -1,0 +1,15 @@
+{% extends 'homecooked/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Add your menu item.</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <!-- <input type="hidden" name="kitchen_id" placeholder="{{user.kitchen.all.first}}" value="{{user.kitchen.all.first}}"> -->
+      <button type="submit">ADD</button>
+    </form>
+</div>
+  
+{% endblock %}

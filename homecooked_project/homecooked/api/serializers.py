@@ -24,8 +24,7 @@ class KitchenSerializer(serializers.HyperlinkedModelSerializer):
         model = Kitchen
         fields = ('owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
 
-class DishSerializer(serializers.HyperlinkedModelSerializer):
-    kitchen = serializers.ReadOnlyField(source='kitchen') 
+class DishSerializer(serializers.HyperlinkedModelSerializer): 
     class Meta:
         model = Dish
         fields = ('kitchen', 'name','image', 'description', 'price', 'cuisine_type', 'dietary')
