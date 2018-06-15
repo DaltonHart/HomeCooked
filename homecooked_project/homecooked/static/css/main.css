@@ -46,27 +46,39 @@ header{
 
    
 
+/* landing page css Start */
+.overview{
+    /* border: 2px solid blueviolet; */
+    min-height: 100%;
+    display: flex;
+}
 
-main{
-    padding-top: 10vh;
-    /* border: 2px solid orange; */
-    height: 100%;
+.cook{
+    background-image: url(./images/cookOver.jpg);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: cover;
+    /* background-color: blue; */
+    /* border: 2px solid yellow; */
+    min-height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 0.5em;
 }
-.login a {
-    margin-right: .2em;
+.customer{
+    background-image: url(./images/customerOver.jpg);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size:cover ;
+    /* background-color: red; */
+    /* border: 2px solid rebeccapurple; */
+    min-height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 0.5em;
 }
-nav {
- grid-row: 1/2;
- grid-column: 1/2;
-}
-.logo a{
-    margin: 0;
-    padding: .2em .3em;
-    font-size: 2.9em;
-    font-display: bottom;
-    font-family: 'Amatic SC', cursive;
-    text-decoration-color: white;
-    color: white;
+.btn-overlay{
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
 }
 
 #cookBtnDiv{
@@ -75,17 +87,17 @@ nav {
     width: 5em;
     display: flex;
     align-items: center;
-    z-index: 50; 
+    /* z-index: 50;  */
     height: 100%;
     border: none;
 }
 #custBtnDiv{
-    order: 3;
+    order: 1;
     margin-right:auto; 
     width: 5em;
     display: flex;
     align-items: center;
-    z-index: 50; 
+    /* z-index: 50;  */
     height: 100%;
     border: none;
 }
@@ -97,26 +109,28 @@ nav {
 }
 #cookBtn{
     width: 5.5em;
-    height: 100%;
+    /* height: 100%; */
     background-color:rgba(0, 0, 0, 0.2);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     
 }
 #custBtn{
     width: 5.5em;
-    height: 100%;
+    /* height: 100%; */
     background-color:rgba(0, 0, 0, 0.2); 
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0.5em;
+    /* padding: 0.5em; */
 }
 
 
 .custDetail{
-    order: 3;
-    display: none;
+	order: 3;
+	width: 60%;
+	display: none;
+	padding: 3em;
 
 }
 .custCatcher,.cookCatcher{
@@ -125,9 +139,27 @@ nav {
 }
 .cookDetail{
     order: 1;
-    display: none;
-    flex-wrap: wrap;
+	width: 60%;
+	display: none;
+	padding: 3em;
 
+}
+
+.detailImg{
+    width: 35%;
+    height: 25%;
+	box-shadow: 2px 2px 4px #000000;
+	margin: 1em;
+}
+.detailP{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+    padding: 1em;
+    background: white;
+    overflow-wrap: break-word;
+	width: 35%;
+	height: 22%;
+    box-shadow: 2px 2px 4px #000000;
 }
 
 .bottomLine{
@@ -140,163 +172,15 @@ nav {
     text-shadow: 2px 2px 4px #000000;
 }
 
-article > img{
-    max-width: 20%;
-    max-height: 20%;
-} */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.overview {
-    display: flex;
-    min-width: 100%;
-    padding: 0;
+.info_box{
+	display: flex;
+	flex-direction: row;
+	/* border: 1px red solid; */
 }
 
-.overview h3{
-    margin: 0;
-    padding: 0;
+.info_box > img{
+	max-width: 40%;
+    max-height: 40%;
 }
-
-
-.slideBtns{
-    display: flex;
-    align-items: center;
-    z-index: 50; 
-    height: 100%;
-    border: 3px solid gold;
-}
-
-#cookBtn{
-    background: url('/static/images/cook.png'); 
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin-left: auto;
-    vertical-align: middle;
-}
-#custBtn{
-    background: url('/static/images/cust.png'); 
-    background-repeat: no-repeat;
-    width: 5.5em;
-    height: 5.5em; 
-    background-size: 100%;
-    vertical-align: middle;
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cook {
-    display: grid;
-    height: 90vh;
-    background-image: url(/static/images/cookOver.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-color: blue;
-    width: 100%;
-}
-.customer{
-    display: grid;
-    background-image: url(/static/images/customerOver.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-color: red;
-    height: 90vh;
-    width: 100%;
-}
-
-.cook .catcher{
-    display: grid;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    padding: 1em;
-    color: white;
-}
-.catcher .bottomLine{
-    grid-row: 3/4;
-    padding-top: 70%;
-    font-size: 4em;
-    text-shadow: 2px 2px 4px #000000;
-}
-.catcher .topLine{
-    grid-row: 1/2;
-    font-size: 5em;
-    text-shadow: 2px 2px 4px #000000;
-}
-
-.cook .detail {
-    grid-column: 4/5;
-    grid-row: 1/2;
-    padding: 2em;
-}
-
-.customer .catcher{
-    grid-column: 4/5;
-    grid-row: 1/2;
-    padding: 1em;
-    text-align: right;
-    color: white;
-}
-
-.customer .detail {
-    grid-column: 1/3;
-    grid-row: 1/2;
-    padding: 2em;
-}
-
-.detail {
-    display: grid;
-}
-.area1 , .area2, .area3 {
-    display: grid;
-}
-.detail img{
-    grid-column: 1/2;
-    margin: 0;
-    width: 25vh;
-    height: 25vh;
-    box-shadow: 2px 2px 4px #000000;
-}
-.detail p{
-    grid-column: 2/3;
-    margin: 1em;
-    padding: 1em;
-    background: white;
-    overflow-wrap: break-word;
-    width: 35vh;
-    box-shadow: 2px 2px 4px #000000;
-}
-
-.area2 img {
-    grid-column: 2/3;
-    grid-row: 1/1;
-}
-.area2 p{
-    grid-column: 1/2;
-    grid-row: 1/1;
-}
+/* landing page css End */

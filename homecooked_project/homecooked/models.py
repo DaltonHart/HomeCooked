@@ -7,7 +7,11 @@ from django.core.validators import MaxValueValidator
 
 
 class Profile(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+	user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
 	name = models.CharField(blank=True, max_length=255)
 	avatar = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	bio = models.TextField()
@@ -21,7 +25,11 @@ class Profile(models.Model):
 		ordering = ['name']
 
 class Kitchen(models.Model):
-	owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='kitchen')
+	owner = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
 	name = models.CharField(blank=True, max_length=60)
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)

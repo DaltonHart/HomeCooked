@@ -2,22 +2,37 @@ $(document).ready(function($){
 	console.log('sanity check one')
 	cook = $('.cook')
 	customer = $('.customer')
-	cookdetails = $('.cook').find('.detail')
-	customerdetails = $('.customer').find('.detail')
-	// cookdetails.hide()
-	// customerdetails.hide()
 	
-	$('#custBtnDiv').on('click', (e)=>{
-		console.log('check')
-		// cook.fadeToggle('slow', 'linear')
+	$('#custBtn').on('click', (e)=>{
+		console.log('check cust btn clicked', $('body').width() )
+		if(customer.width() > $('body').width()/2){
+			console.log('customer`s width is in 100%')
+			$('.custDetail').toggle().hide();
+			$(cook).animate({width:"50%"},800);
+			$(customer).animate({width:'50%', marginLeft:0}, {duration: 1000});
+
+		}else{
+			$(cook).animate({width:"0"},800);
+			$(customer).animate({width:'100%',postition:'abosulute', left:0}, {duration: 800});
+			$('.custDetail').toggle().show();
+		}
 	})
-	$('#cookBtnDiv').on('click', (e)=>{
-		console.log('check')
-		// var toggleWidth = $("#toggle").width() == 300 ? "200px" : "300px";
-		var togglewidth = $(cook).width() == "100%" ? "50%" : "70%";
-		// $('.cookDetail').toggle().show();
-		// cook.toggle().animate({ width: toggleWidth });
-		// customer.fadeToggle('slow', 'linear')
+
+	$('#cookBtn').on('click', (e)=>{
+		// console.log('before', cook.css('width'))
+		// console.log('documtn', $('body').css('width'))
+		if(cook.width() > $('body').width()/2){
+			console.log('cooks`s width is in 100%')
+			console.log('cust`s width is', customer.width())
+			$('.cookDetail').toggle().hide();
+			$(customer).animate({width:"50%"},800);
+			$(cook).animate({width:'50%'}, {duration: 1000});
+		}else{
+			$(customer).animate({width:"0"},800);
+			$(cook).animate({width:'100%'}, {duration: 800});
+			$('.cookDetail').toggle().show();
+		}
+	
 	})
 
 

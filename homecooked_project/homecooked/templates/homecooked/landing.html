@@ -6,78 +6,73 @@
     {% block loggedin %}
     {% endblock %}
 
-{% else %}
-<section class="overview ">
+{% else %}<div class="overview ">
 
-    <div class="cook">
-        <section id="cookBtnDiv" class="slideBtns">
-            <div class="btn-overlay">
-                    <button id="cookBtn">
-                        <span class="btnCarrot"> > </span>
-                    </button>
-            </div> 
-            
-        </section>
-        <section class="cookCatcher catcher ">
-            <h3 class="topLine"> Connecting </br> Cooks</h3>
-            <h3 class="bottomLine"> to Customers</h3>
-        </section>
-        <section class="cookDetail detail">
-            <article class="area1">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-            <article class="area2">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-            <article class="area3">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-        </section>
-    </div>
-    
-    <div class="customer ">
-        <section class="catcher l">
-            <h3 class="topLine">Bringing home </h3>
-            <h3 class="topLine">cooked meals </h3>
-            <h3 class="bottomLine">straight to you</h3>
-        </section>
-        <section class="detail ">
-            <article class="area1 ">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-            <article class="area2">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-            <article class="area3 ">
-                <img src="/static/images/pexels-photo-277253.jpeg">
-                <p> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
-                    poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
-            </article>
-        </section>
-        <section class="custCatcher catcher">
-            <h3 class="topLine">Bringing home </h3>
-            <h3 class="topLine">cooked meals </h3>
-            <h3 class="bottomLine">straight to you</h3>
-        </section>
-        <section id='custBtnDiv' class="slideBtns"> 
+        <div class="cook">
+            <section id="cookBtnDiv" class="slideBtns">
                 <div class="btn-overlay">
-                        <button id="custBtn">
-                                <span class="btnCarrot"> < </span>
+                        <button id="cookBtn">
+                            <span class="btnCarrot cookCarrot"> > </span>
                         </button>
-                </div>    
-        </section>
+                </div> 
+                
+            </section>
+            <section class="cookCatcher catcher ">
+                <h3 class="topLine"> Connecting </br> Cooks</h3>
+                <h3 class="bottomLine"> to Customers</h3>
+            </section>
+            <section class="cookDetail detail">
+                <article class="area1 info_box">
+                    <img class="detailImg"  src="./images/pexels-photo-277253.jpeg">
+                    <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                        poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                </article>
+                <article class="area2 cookArea2 info_box">
+                        <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                                poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                        <img class="detailImg"  src="./images/pexels-photo-277253.jpeg">
+                </article>
+                <article class="area3 info_box">
+                    <img class="detailImg"  src="./images/pexels-photo-277253.jpeg">
+                    <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                        poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                </article>
+            </section>
+        </div>
+        
+        <div class="customer ">
+            <section class="custDetail detail ">
+                <article class="area1 info_box ">
+                    <img class="detailImg" src="./images/pexels-photo-277253.jpeg">
+                    <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                        poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                </article>
+                <article class="area2 custArea2 info_box">
+                    <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                            poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                    <img class="detailImg"  src="./images/pexels-photo-277253.jpeg">
+                
+                </article>
+                <article class="area3 info_box ">
+                    <img class="detailImg"  src="./images/pexels-photo-277253.jpeg">
+                    <p class='detailP'> Kickstarter sartorial chillwave vexillologist hoodie cray. Succulents chia la croix irony direct trade plaid
+                        poutine af chillwave artisan mustache man bun butcher cardigan YOLO. </p>
+                </article>
+            </section>
+            <section class="custCatcher catcher">
+                <h3 class="topLine">Bringing home </h3>
+                <h3 class="topLine">cooked meals </h3>
+                <h3 class="bottomLine">straight to you</h3>
+            </section>
+            <section id='custBtnDiv' class="slideBtns"> 
+                    <div class="btn-overlay">
+                            <button id="custBtn">
+                                    <span class="btnCarrot custCarrot"> < </span>
+                            </button>
+                    </div>    
+            </section>
+        </div>
+        
     </div>
-    <span class="cd-handle"></span>
-</section>
 {% endif %}
 {% endblock %}
