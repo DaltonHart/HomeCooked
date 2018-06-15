@@ -54,7 +54,7 @@ header{
 }
 
 .cook{
-    background-image: url(./images/cookOver.jpg);
+    background-image: url(static/images/cookOver.jpg);
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
@@ -66,7 +66,7 @@ header{
     padding: 0.5em;
 }
 .customer{
-    background-image: url(./images/customerOver.jpg);
+    background-image: url(static/images/customerOver.jpg);
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size:cover ;
