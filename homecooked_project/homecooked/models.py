@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator
 
 
 class Profile(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userprofile')
 	name = models.CharField(blank=True, max_length=255)
 	avatar = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	bio = models.TextField()

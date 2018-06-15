@@ -60,3 +60,23 @@ h3 {
 .autocomplete-div {
     text-align: center;
 }
+
+.customerMainContainer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+.customerAccount {
+    display: flex;
+    flex: 1;
+}
+
+.HolyGrail-content {
+    flex: 1;
+  }
+  
+.customerAside {
+/* 12em is the width of the columns */
+    flex: 0 0 12em;
+}

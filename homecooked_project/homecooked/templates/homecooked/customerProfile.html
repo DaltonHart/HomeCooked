@@ -4,20 +4,20 @@
 
 <div class="customerMainContainer">
     <section class="customerAccount">
-        <h5> Your Account </h5>>
-        <img class="accountAvatar" src="{% static 'user.profile.avatar' %}"/>
+        <h5 class="accountTitle"> Your Account </h5>
+        <img class="accountAvatar" src=""/>
         <p class="accountTitles">Name: {{user.username}}</p> 
         <p class="accountTitles">Email: {{user.email}}</p> 
         <p class="accountTitles">Address: {{user.profile.address}}</p> 
         <p class="accountTitles">Bio: {{user.profile.bio}}</p>    
-    </section>>
+    </section>
     <section class="customerAside">
-        <h2 class="accountNavTitle">Your Account</h2>>
+        <h2 class="accountNavTitle">Your Account</h2>
         <h5 class="accountNav"><a href="">Profile</h5>
         <h5 class="accountNav"><a href="">Address and Phone</h5>
         <h5 class="accountNav"><a href="">Payments</h5>
         <h5 class="accountNav"><a href="">Orders</h5>
-    </section>>    
+    </section>    
 </div>
 
 {% endblock %}

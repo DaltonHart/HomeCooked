@@ -1,0 +1,37 @@
+{% extends 'homecooked/landing.html' %} 
+
+{% block loggedin %}
+<div class="main-container">
+        <br/>
+        <div class="row">
+            <div class="col s12">
+            <div class="row">
+                <div class="autocomplete-div">
+                <div class="input-field col s11">
+                <i class="material-icons prefix"></i>
+                <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ what are you hungry for?"class="autocomplete">
+                <label for="autocomplete-input"></label>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    <div section="Menu"> 
+        <div class="menuTitle">{{kitchen.name}} Menu</div>
+        <div class="kitchenDishes"> 
+            <img class="dishImage" src=""/>
+            <h6 class="dishName">{{dish.name}}</h6>
+            <p class="dishCuisineType">{{dish.cuisine_type}}</p>
+            <p class="dishPrice">{{dish.price}}</p>
+            <p class="dishDescription">{{dish.description}}</p>
+            <p class="dishDietary">{{dish.dietary}}</p>
+            <p><a href="">add to bag</p>
+        </div>
+    </div>
+
+    <div section="KitchenInfo">
+    </div>>
+</div>
+
+{% endblock %}
