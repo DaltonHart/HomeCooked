@@ -38,7 +38,7 @@ def profile_create(request):
 
 def user_profile(request, pk):
     user = request.user
-    found_profile = Profile.objects.filter(user = user)
+    found_profile = Profile.objects.filter(user = user).first()
     print("found Profile", found_profile)
     return render(request, 'homecooked/userProfile.html', {'profile': found_profile})
 
