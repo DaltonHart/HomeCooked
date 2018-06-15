@@ -75,7 +75,7 @@ img {
     margin-bottom: 5vh;
     overflow: scroll;
 }
-.customerAccount {
+/* .customerAccount {
     grid-row: 1/2;
     grid-column: 1/2;
 }
@@ -88,4 +88,4 @@ img {
 .customerMainContainer {
     display: grid;
     margin-left: 3em;
-}
+} */
