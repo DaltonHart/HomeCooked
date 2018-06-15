@@ -136,5 +136,5 @@ REST_FRAMEWORK = {
     ]
 }
 
-LOGIN_REDIRECT_URL = 'kitchen'
+LOGIN_REDIRECT_URL = 'kitchens'
 LOGOUT_REDIRECT_URL = 'landing'

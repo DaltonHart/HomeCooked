@@ -9,11 +9,11 @@ urlpatterns = [
     path('', views.landing, name='landing'),
     path('signup/', views.signup, name='signup'),
     path('profile/', views.profile_create, name='profile'),
-    path('kitchens/', views.kitchen, name='kitchen'),
+    path('kitchens/', views.kitchens, name='kitchens'),
+    path('kitchens/<int:pk>', views.kitchen_detail, name='kitchen'),
     path('kitchenform/', views.kitchen_create, name='kitchenForm'),
     path('dishform/', views.dish_create, name='dishForm'),
     path('userprofile/<int:pk>', views.user_profile, name='user_profile'),
-    path('cookmenu/', views.cook_menu, name='cook_menu'),
 ]
 
 if settings.DEBUG:

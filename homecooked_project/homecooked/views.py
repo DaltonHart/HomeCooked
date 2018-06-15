@@ -36,12 +36,18 @@ def profile_create(request):
         form = ProfileForm()
     return render(request, 'homecooked/profileform.html', {'form': form})
 
-def kitchen(request):
+def user_profile(request, pk):
+    profile = Profile.objects.get(id=pk)
+    return render(request, 'homecooked/userProfile.html', {'profile': profile})
+
+def kitchens(request):
+    print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
     print('look here',dishes)
     return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes})
 
+<<<<<<< HEAD
 def user_profile(request, pk):
     profile = Profile.objects.get(id=pk)
     return render(request, 'homecooked/userProfile.html', {'profile': profile})
@@ -49,6 +55,12 @@ def user_profile(request, pk):
 def cook_menu(request):
     # cook_menu = Dish.objects.get(id=pk)
     return render(request, 'homecooked/cookMenu.html')
+=======
+def kitchen_detail(request, pk):
+    kitchen = Kitchen.objects.get(id=pk)
+    return render(request, 'homecooked/kitchen_detail.html', {'kitchen': kitchen})
+
+>>>>>>> ec4a84a1930cc7e1378de2d1f3d7fd70c7694f22
 
 def kitchen_create(request):
     if request.method == 'POST':
