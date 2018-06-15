@@ -10,6 +10,6 @@ urlpatterns = [
     path('kitchens/', views.kitchen, name='kitchen'),
     path('kitchenform/', views.kitchen_create, name='kitchenForm'),
     path('dishform/', views.dish_create, name='dishForm'),
-    path('customerProfile', views.customer_profile, name='customer_profile'),
-    path('cookProfile', views.cook_profile, name='cook_profile'),
+    path('userprofile/<int:pk>', views.user_profile, name='user_profile'),
+    path('cookmenu/', views.cook_menu, name='cook_menu'),
 ]

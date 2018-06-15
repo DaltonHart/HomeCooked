@@ -9,7 +9,7 @@
                 <div class="autocomplete-div">
                 <div class="input-field col s11">
                 <i class="material-icons prefix"></i>
-                <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ what are you hungry for?"class="autocomplete">
+                <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ search for dishes"class="autocomplete">
                 <label for="autocomplete-input"></label>
                 </div>
                 </div>
@@ -18,20 +18,23 @@
         </div>
 
     <div section="Menu"> 
-        <div class="menuTitle">{{kitchen.name}} Menu</div>
+        <div class="menuTitle">{{cook_menu.kitchen.name}} Menu</div>
         <div class="kitchenDishes"> 
             <img class="dishImage" src=""/>
-            <h6 class="dishName">{{dish.name}}</h6>
-            <p class="dishCuisineType">{{dish.cuisine_type}}</p>
-            <p class="dishPrice">{{dish.price}}</p>
-            <p class="dishDescription">{{dish.description}}</p>
-            <p class="dishDietary">{{dish.dietary}}</p>
+            <h6 class="dishName">{{cook_menu.name}}</h6>
+            <p class="dishCuisineType">{{cook_menu.cuisine_type}}</p>
+            <p class="dishPrice">{{cook_menu.price}}</p>
+            <p class="dishDescription">{{cook_menu.description}}</p>
+            <p class="dishDietary">{{cook_menu.dietary}}</p>
             <p><a href="">add to bag</p>
         </div>
     </div>
 
-    <div section="KitchenInfo">
-    </div>>
+    <div section="kitchenInfo">
+        <h4 class="kitchenName">{{cook_menu.kitchen.name}}</h4>
+        <p class="kitchenRating">{{cook_menu.kitchen.rating}}</p>
+        <p class="kitchenDescription">{{cook_menu.kitchen.description}}</p>
+    </div>
 </div>
 
 {% endblock %}

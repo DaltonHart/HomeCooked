@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import registrationForm, ProfileForm, KitchenForm, DishForm
+from .models import Profile, Kitchen, Dish
 
 # Create your views here.
 def landing(request):
@@ -38,15 +39,16 @@ def profile_create(request):
 def kitchen(request):
     return render(request, 'homecooked/userIndex.html')
 
-def customer_profile(request):
-    return render(request, 'homecooked/customerProfile.html')
-
-def cook_profile(request):
-    return render(request, 'homecooked/cookProfile.html')
-
+def user_profile(request, pk):
+    profile = Profile.objects.get(id=pk)
+    return render(request, 'homecooked/userProfile.html', {'profile': profile})
 
 def kitchen(request):
     return render(request, 'homecooked/userIndex.html')
+
+def cook_menu(request):
+    # cook_menu = Dish.objects.get(id=pk)
+    return render(request, 'homecooked/cookMenu.html')
 
 def kitchen_create(request):
     if request.method == 'POST':
