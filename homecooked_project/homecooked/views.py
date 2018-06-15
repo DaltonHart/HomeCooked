@@ -65,6 +65,7 @@ def dish_create(request):
         form = DishForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            print('HERE IT IS LOOK HERE', request.user.objects)
             post.kitchen = request.user.kitchen
             post.save()
             return redirect('kitchen')

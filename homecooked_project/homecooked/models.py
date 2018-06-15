@@ -44,7 +44,7 @@ class Dish(models.Model):
 	description = models.TextField(max_length=140)
 	price = models.FloatField()
 	cuisine_type = models.CharField(max_length=15) 
-	dietary = ArrayField(models.CharField(max_length=10))
+	dietary = ArrayField(models.CharField(max_length=10), null=True)
 
 
 	def __str__(self):
