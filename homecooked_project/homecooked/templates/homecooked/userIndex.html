@@ -42,6 +42,7 @@
 
     </section>
 
+
 <h3>~ Delivery ~</h3>
   <hr>
 <div class="dishes">
@@ -49,7 +50,7 @@
     {% for dish in dishes %}
     <div class="card-panel hoverable sticky-action">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="/img/{{dish.image}}">
+          <img class="activator" src="{{dish.image.url}}">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{dish.name}}<i class="material-icons right"></i></span>
