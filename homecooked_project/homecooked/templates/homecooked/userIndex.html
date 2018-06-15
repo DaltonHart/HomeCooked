@@ -1,4 +1,5 @@
 {% extends 'homecooked/landing.html' %} 
+{% load static %}
 
 {% block loggedin %}
 <div class="main-container">
@@ -17,126 +18,55 @@
         </div>
     </div>
 
-<h3>~ Popular ~</h3>
-<br/>
-<br/>
-<div class="highest-rated">    
+
+<div class="container">
+    <h3>~ Popular ~</h3>
+
+    <hr>
+<section class="highest-rated">
+
+    {% for kitchen in kitchens %}
     <div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAwdHBvTUeEH5nDoMLzA6RCbuj2LJsQkbUFDk1ar4XGB5c0qOZ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://icdn2.digitaltrends.com/image/uni-kitchen-vegan-quinoa-720x720.jpg?ver=1.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7mPUwoQJiU_fzscWny5LKauCLEPD7wYeZgjl9BrcmNTB34ku_cQ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7mPUwoQJiU_fzscWny5LKauCLEPD7wYeZgjl9BrcmNTB34ku_cQ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{kitchen.logo.url}}">
         </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{kitchen.name}}<i class="material-icons right"></i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
+          <p>{{kitchen.description}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+    </section>
 
 <h3>~ Delivery ~</h3>
-<div class="highest-rated">
+  <hr>
+<div class="dishes">
     <br/>
+    {% for dish in dishes %}
     <div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7mPUwoQJiU_fzscWny5LKauCLEPD7wYeZgjl9BrcmNTB34ku_cQ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7mPUwoQJiU_fzscWny5LKauCLEPD7wYeZgjl9BrcmNTB34ku_cQ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7mPUwoQJiU_fzscWny5LKauCLEPD7wYeZgjl9BrcmNTB34ku_cQ">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
-<div class="card-panel hoverable sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5yVFegEpIMBWjBI64uFRjcVM2x5GmLxPSxFSMjJ33G2prQYW">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p><a href="#">businesswebsite</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Andy's Food Shop<i class="material-icons right"></i></span>
-              <p>A lot of good food here come and join us while we all eat good food</p>
-            </div>
-          </div>
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="/img/{{dish.image}}">
         </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{dish.name}}<i class="material-icons right"></i></span>
+          <p><a href="#">${{dish.price}}</a></p>
+          <p>{{dish.description}}</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{dish.kitchen.name}}<i class="material-icons right"></i></span>
+          
+        </div>
+      </div>
+
+    {% endfor %}
+        <hr>
 </div>
-
-
-
-
 </div>
+<!-- 
   <script> 
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.autocomplete');
@@ -155,6 +85,6 @@
       },
     });
   });
-  </script>
+  </script> -->
 
 {% endblock %}

@@ -1,11 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
 .highest-rated {
     display: flex;
     text-align: center;
-    border: solid black 2px;
     justify-content: space-between;
     width: 95%;
     margin: 0 auto;
-    background-image: url("https://img.okezone.com//content/2016/11/11/298/1539303/ternyata-ini-arti-piring-bersih-setelah-makan-di-beberapa-negara-Bz9YXO886K.jpg");
+    overflow: scroll;
 }
 
 .kitchen-name {
@@ -38,8 +41,9 @@ h3 {
 }
 
 .card-panel {
-    background-color: rgba(255,255,255,0.55);
-    margin: 0 auto;
+    background-color: rgb(243, 240, 240);
+    margin: 2em 2em;
+    max-width: 40vh;
 }
 
  /* label focus color */
@@ -53,9 +57,21 @@ h3 {
   }
 
 .card-panel:hover {
-    background-color: rgba(255,255,255,1);
+    background-color: rgb(229, 226, 226);
 }
 
 .autocomplete-div {
     text-align: center;
+}
+img {
+    max-width: 20vh !important;
+}
+.dishes{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    overflow: scroll;
 }
