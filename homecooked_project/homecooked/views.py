@@ -38,6 +38,16 @@ def profile_create(request):
 def kitchen(request):
     return render(request, 'homecooked/userIndex.html')
 
+def customer_profile(request):
+    return render(request, 'homecooked/customerProfile.html')
+
+def cook_profile(request):
+    return render(request, 'homecooked/cookProfile.html')
+
+
+def kitchen(request):
+    return render(request, 'homecooked/userIndex.html')
+
 def kitchen_create(request):
     if request.method == 'POST':
         form = KitchenForm(request.POST)
