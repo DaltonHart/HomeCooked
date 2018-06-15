@@ -14,7 +14,6 @@ class Profile(models.Model):
 	iscook = models.BooleanField(default=False)
 	address = models.TextField()
 
-
 	def __str__(self):
 		return self.name
 
@@ -22,7 +21,11 @@ class Profile(models.Model):
 		ordering = ['name']
 
 class Kitchen(models.Model):
-	owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='kitchen')
+	owner = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
 	name = models.CharField(blank=True, max_length=60)
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)

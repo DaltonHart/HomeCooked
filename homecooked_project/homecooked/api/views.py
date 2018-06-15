@@ -14,7 +14,26 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+    # def list(self, request):
+    #     queryset = User.objects.all().order_by('-date_joined')
+    #     serializer_class = UserSerializer
 
+    # def create(self, request):
+    #      serializer.save(owner=self.request.user)
+
+    # def retrieve(self, request, pk=None):
+    #     pass
+
+    # def update(self, request, pk=None):
+    #     pass
+
+    # def partial_update(self, request, pk=None):
+    #     pass
+
+    # def destroy(self, request, pk=None):
+    #     pass
+    # def perform_create(self, serializer):
+    #     serializer.save()
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
