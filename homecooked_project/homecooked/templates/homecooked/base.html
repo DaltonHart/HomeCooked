@@ -17,13 +17,19 @@
 </head>
 <body>
     <header>
+<<<<<<< HEAD
         <section >
             <p><a class="logo" href="{% url 'kitchen' %}">Home Cooked</a></p>
+=======
+        <section class="logo">
+            <p><a href="{% url 'kitchens' %}">Home Cooked</a></p>
+>>>>>>> a8d55b559d9f7a53f280498fd9921b8492fb69b5
         </section>
         <section class="login">
             {% block userinfo %}
             {% if user.is_authenticated %}
-              <p>Welcome Back {{ user.username }}!</p>
+               <p>id:{{user.id}}</p> 
+              <p>Welcome Back  <span><a href="/userprofile/{{user.id}}">{{ user.username }}!</a></span></p>
               <p><a href="{% url 'logout' %}">logout</a></p>
             {% else %}
               <p>Start cooking and eating today.</p>
