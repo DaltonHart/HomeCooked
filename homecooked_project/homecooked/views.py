@@ -45,8 +45,6 @@ def user_profile(request, pk):
     profile = Profile.objects.get(id=pk)
     return render(request, 'homecooked/userProfile.html', {'profile': profile})
 
-def kitchen(request):
-    return render(request, 'homecooked/userIndex.html')
 
 def cook_menu(request):
     # cook_menu = Dish.objects.get(id=pk)
