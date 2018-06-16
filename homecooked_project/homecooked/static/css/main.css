@@ -219,11 +219,3 @@ aside{
     grid-column: 3/4 !important;
     background-color: #000000 !important;
    }
-
-.loggedin{
-       display: grid;
-   }
-
-.main-container{
-       grid-column: 1/3;
-   }
