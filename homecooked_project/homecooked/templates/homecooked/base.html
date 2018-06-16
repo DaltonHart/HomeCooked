@@ -23,9 +23,8 @@
         <section class="login">
             {% block userinfo %}
             {% if user.is_authenticated %}
-               <p>id:{{user.id}}</p> 
               <p>Welcome Back  <span><a href="/userprofile/{{user.id}}">{{ user.username }}!</a></span></p>
-              <p><a href="{% url 'logout' %}">logout</a></p>
+              <p><a href="{% url 'logout' %}">Logout</a></p>
             {% else %}
               <p>Start cooking and eating today.</p>
               <a href="{% url 'login' %}">Login</a>

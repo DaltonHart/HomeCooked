@@ -2,11 +2,15 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
+ 
     {% block loggedin %}
     {% endblock %}
 
-{% else %}<div class="overview ">
+    <aside class="cart col s3">
+        <p>Cart</p>
+    </aside>
+{% else %}
+<div class="overview ">
 
         <div class="cook">
             <section id="cookBtnDiv" class="slideBtns">

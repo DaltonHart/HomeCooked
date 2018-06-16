@@ -55,9 +55,9 @@ class KitchenViewSet(viewsets.ModelViewSet):
     """
     queryset = Kitchen.objects.all()
     serializer_class = KitchenSerializer
-    permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly, )
+    # permission_classes = (
+    #     permissions.IsAuthenticatedOrReadOnly,
+    #     IsOwnerOrReadOnly, )
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
