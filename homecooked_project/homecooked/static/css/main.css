@@ -12,10 +12,12 @@ body {
     margin: 0 !important;
 }
 header{
+    position: fixed;
+    z-index: 100;
     color: white;
     background-color:black;
     display: grid;
-    height: 20%;
+    height: 12%;
     width: 100%;
 }
 .row {
@@ -216,11 +218,17 @@ main{
 aside{
     background-color: #000000 !important;
     color: white;
-    height: 80%;
+    height: 100%;
 }
 
 .btn {
     margin: 0 auto;
     margin-bottom: 1em;
     background-color: #039be5 !important;
+}
+.main{
+    margin-top: 7%;
+}
+.card-content p , .card-content span{
+    margin-bottom: 1em;
 }
