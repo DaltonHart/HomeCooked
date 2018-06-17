@@ -26,7 +26,7 @@
 <section class="highest-rated">
 
     {% for kitchen in kitchens %}
-    <div class="card-panel hoverable sticky-action">
+    <div id='{{kitchen.pk}}' class="card-panel hoverable sticky-action kitchenCard">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="{{kitchen.logo.url}}">
         </div>
@@ -38,8 +38,10 @@
           <p>{{kitchen.description}}</p>
         </div>
       </div>
+      <a href="{% url 'kitchenForm' %}"><h1>Make A kitchen</h1></a>
       {%empty%}
       <h1>sorry no kitchens in you're area at this time :(</h1>
+     <a href='{% url 'kitchenForm' %}' id="makeKitchen"><h1>Make A kitchen</h1></a>
     {% endfor %}
 
     </section>
@@ -69,6 +71,15 @@
         <hr>
 </div>
 </div>
+
+<script>
+  $('.kitchenCard').on('click', function(e){
+		e.preventDefault();
+    console.log(e.currentTarget.id);
+    //go to kitchen detail
+    id = e.currentTarget.id
+	})
+</script>
 <!-- 
   <script> 
     document.addEventListener('DOMContentLoaded', function() {
