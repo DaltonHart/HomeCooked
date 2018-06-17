@@ -224,11 +224,15 @@ aside{
 .btn {
     margin: 0 auto;
     margin-bottom: 1em;
-    background-color: #039be5 !important;
+    background-color: #6EB257 !important;
 }
 .main{
     margin-top: 7%;
 }
-.card-content p , .card-content span{
-    margin-bottom: 1em;
+.card-content p {
+    margin: 1em 0;
+}
+
+a{
+    color: #6EB257;
 }
