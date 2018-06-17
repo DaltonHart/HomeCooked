@@ -21,11 +21,7 @@ class Profile(models.Model):
 		ordering = ['name']
 
 class Kitchen(models.Model):
-	owner = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
+	owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='owner')
 	name = models.CharField(blank=True, max_length=60)
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)

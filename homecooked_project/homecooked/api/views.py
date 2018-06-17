@@ -53,15 +53,9 @@ class KitchenViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    print("HITT KITCHENS")
     queryset = Kitchen.objects.all()
     serializer_class = KitchenSerializer
-    permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly, )
-    
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+
 
 class DishViewSet(viewsets.ModelViewSet):
     """

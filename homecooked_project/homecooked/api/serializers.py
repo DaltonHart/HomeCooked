@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
 from homecooked.models import Profile, Kitchen, Dish, Order
 from rest_framework import serializers
+from rest_framework.serializers import HyperlinkedModelSerializer
 
 
 
@@ -21,7 +22,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('user', 'name','avatar','bio', 'iscook', 'address')
         
 class KitchenSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
+   class Meta:
         model = Kitchen
         fields = ('owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
 
@@ -29,7 +30,6 @@ class DishSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Dish
         fields = ('kitchen', 'name','image', 'description', 'price', 'cuisine_type', 'dietary')
-
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     order_by = serializers.ReadOnlyField(source='owner') 
