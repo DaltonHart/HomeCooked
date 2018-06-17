@@ -33,17 +33,16 @@
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{kitchen.name}}<i class="material-icons right"></i></span>
         </div>
-        <div class="card-reveal">
+        <div c
+        lass="card-reveal">
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
         </div>
       </div>
-      <a href="{% url 'kitchenForm' %}"><h1>Make A kitchen</h1></a>
       {%empty%}
       <h1>sorry no kitchens in you're area at this time :(</h1>
-     <a href='{% url 'kitchenForm' %}' id="makeKitchen"><h1>Make A kitchen</h1></a>
-    {% endfor %}
-
+     {% endfor %}
+     <a href="{% url 'kitchenForm' %}"><h1>Make A kitchen</h1></a>
     </section>
 
 

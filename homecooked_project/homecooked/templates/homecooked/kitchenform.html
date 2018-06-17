@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
     <h2>Create Your Kitchen!</h2>
-    <form method="post">
+    <form enctype="multipart/form-data" method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">Create</button>

@@ -53,6 +53,7 @@ class KitchenViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
+    print("HITT KITCHENS")
     queryset = Kitchen.objects.all()
     serializer_class = KitchenSerializer
     permission_classes = (

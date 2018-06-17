@@ -27,6 +27,7 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ('name', 'avatar','bio','address')
 
+#Form(request.POST, request.FILES, instance = company)
 class KitchenForm(forms.ModelForm):
 
     class Meta:

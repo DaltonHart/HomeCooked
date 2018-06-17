@@ -58,7 +58,8 @@ def kitchen_detail(request, pk):
 
 def kitchen_create(request):
     if request.method == 'POST':
-        form = KitchenForm(request.POST)
+        # form = KitchenForm(request.POST)
+        form = KitchenForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.owner = request.user
