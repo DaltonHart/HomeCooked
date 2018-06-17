@@ -4,6 +4,7 @@
 {% if user.is_authenticated %}
 
     {% block loggedin %}
+     {% url 'kitchens' %}
     {% endblock %}
 
 {% else %}<div class="overview ">

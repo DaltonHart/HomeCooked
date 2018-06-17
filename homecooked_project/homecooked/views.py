@@ -7,7 +7,10 @@ from .forms import registrationForm, ProfileForm, KitchenForm, DishForm
 from .models import User, Kitchen, Profile, Dish
 # Create your views here.
 def landing(request):
-    return render(request, 'homecooked/landing.html')
+    if request.user.is_authenticated == True:
+        return render(request, 'homecooked/userIndex.html')
+    else:
+        return render(request, 'homecooked/landing.html')
 
 def signup(request):
     if request.method == 'POST':
