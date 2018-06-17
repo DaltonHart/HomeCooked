@@ -2,9 +2,11 @@
 {% load static %}
 
 {% block loggedin %}
-<div class="main-container row">
+<div>
+
     <br/>
-    <div class="row">
+
+    <div>
         <div class="col s12">
         <div class="row">
             <div class="autocomplete-div">
@@ -19,7 +21,7 @@
     </div>
 
 
-<div class="container col s9">
+<div>
     <h3>~ Popular Kitchens ~</h3>
 
     <hr>
@@ -36,6 +38,7 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
+          <a class="waves-effect waves-light btn">View Menu</a>
         </div>
       </div>
       {%empty%}
@@ -43,7 +46,6 @@
     {% endfor %}
 
     </section>
-
 
 <h3>~ Popular Dishes ~</h3>
   <hr>
@@ -56,18 +58,17 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{dish.name}}<i class="material-icons right"></i></span>
-          <p><a href="#">${{dish.price}}</a></p>
+
           <p>{{dish.description}}</p>
+          <p>${{dish.price}}</p>
+          <p><a href="#">{{dish.kitchen.name}}</a></p>
         </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{dish.kitchen.name}}<i class="material-icons right"></i></span>
-          
-        </div>
+        <a class="waves-effect waves-light btn">Add to Order</a>
       </div>
 
     {% endfor %}
         <hr>
 </div>
 </div>
-
+</div>
 {% endblock %}
