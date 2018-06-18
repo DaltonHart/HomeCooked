@@ -22,6 +22,8 @@ class registrationForm(UserCreationForm):
 
 
 class ProfileForm(forms.ModelForm):
+    iscook = forms.BooleanField()
+    
     class Meta:
         model = Profile
         fields = ('name', 'avatar','bio','address', 'iscook')
