@@ -36,11 +36,10 @@
     </header>
     <section class="main row">
         {% if user.is_authenticated %}
-            <main class="col s10">
+            <main class="holder col s10">
                     {% block loggedin %}
                     {% endblock %}
             </main>
-            
                 <aside class="col s2">
                         <h4>Cart:</h4>
                         <ol>

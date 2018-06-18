@@ -1,25 +1,15 @@
-{% extends 'homecooked/base.html' %} 
+{% extends 'homecooked/landing.html' %} 
 
 {% block loggedin %}
 
 <div class="customerMainContainer container">
     <section class="customerAccount"> 
-<<<<<<< HEAD
-        <h3 class="accountTitle"> Your Account </h3>
-        <hr/>
-        <img class="accountAvatar circle responsive-img" src="{{profile.avatar.url}}"<a class="btn-floating btn-medium cyan"><i class="material-icons">edit</i></a>/>
-        <h5 class="card-panel"><span class="profileProperties">Name:</span> {{profile.user.username}}<a class="btn-floating btn-medium cyan"><i class="material-icons">edit</i></a></h5> 
-        <h5 class="card-panel"><span class="profileProperties">Email:</span> {{profile.user.email}}<a class="btn-floating btn-medium cyan"><i class="material-icons">edit</i></a></h5> 
-        <h5 class="card-panel"><span class="profileProperties">Address:</span> {{profile.address}}<a class="btn-floating btn-medium cyan"><i class="material-icons">edit</i></a></h5> 
-        <h5 class="card-panel"><span class="profileProperties">Bio:</span> {{profile.bio}}<a class="btn-floating btn-medium cyan"><i class="material-icons">edit</i></a></h5>    
-=======
         <h3 class="accountTitle"> Your Account </h5>
         <img class="accountAvatar" src="{{profile.avatar.url}}"/>
         <h5 class="accountTitles">Name: {{profile.user.username}}</h5> 
         <h5 class="accountTitles">Email: {{profile.user.email}}</h5> 
         <h5 class="accountTitles">Address: {{profile.address}}</h5> 
         <h5 class="accountTitles">Bio: {{profile.bio}}</h5>    
->>>>>>> d4b0705225819f2bd44b5270f74c4190163c1513
     </section>
     <section class="customerAside">
         <h3 class="accountNavTitle">{{profile.user.username}}</h2>

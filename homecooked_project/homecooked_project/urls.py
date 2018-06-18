@@ -15,15 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url, include, static
-from django.contrib.auth import views as auth_views
-from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homecooked.urls')),
-    url(r'^accounts/login/$', auth_views.login, name='login'),
-    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include('homecooked.api.urls')),
+    path('', include('homecooked.urls'))
 ]
+
