@@ -19,7 +19,8 @@
             <a class="col s3 waves-effect waves-light btn addmenu" href="{% url 'dishForm' %}"><p>Add Menu Item</p></a>
             {% endif %}
         </div>
-    <div> 
+        <div class="row menuitems">
+    <div class="col s9"> 
         <h3>{{kitchen.name}}</h3>
         <h4>~Menu~</h4>
         <div class="menu"> 
@@ -43,7 +44,21 @@
         <p>No Dishes Available</p>
             {% endfor %}
     </div>
-
+    
+</div>
+{% if user == kitchen.owner %}
+    <div class="col s3 openorders">
+        <h4>Open Orders</h4>
+        {% for openOrder in openOrders %}
+            <ol>
+                <li>{{openOrder.order_by}}:{{openOrder.order_item}}</li>
+                <p>{{openOrder.order_time}}</p>
+            </ol>
+            {% empty %}
+            <p>no open orders</p>
+        {% endfor %}
+    </div>
+    {% endif %}
 </div>
 </div>
 

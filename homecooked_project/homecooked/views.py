@@ -45,18 +45,17 @@ def user_profile(request, pk):
     return render(request, 'homecooked/userProfile.html', {'profile': found_profile})
 
 def kitchens(request):
-    print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
     orders = Order.objects.filter(order_by = request.user)
-    print('look here',dishes)
     return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes, 'orders': orders})
 
 def kitchen_detail(request, pk):
     kitchen = Kitchen.objects.get(pk=pk)
     dishes = Dish.objects.filter(kitchen = kitchen)
     orders = Order.objects.filter(order_by = request.user)
-    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders})
+    openOrders = Order.objects.filter(order_from = request.user.kitchen)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders,'openOrders':openOrders})
 
 
 def kitchen_create(request):

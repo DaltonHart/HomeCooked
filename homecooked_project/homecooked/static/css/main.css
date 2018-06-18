@@ -269,3 +269,7 @@ h4{
 .delete{
     background-color: rgb(196, 8, 8);
 }
+
+.openorders{
+    border: 2px solid #000000;
+}
