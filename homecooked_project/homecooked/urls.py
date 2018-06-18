@@ -13,6 +13,8 @@ urlpatterns = [
     path('kitchens/<int:pk>', views.kitchen_detail, name='kitchen'),
     path('kitchenform/', views.kitchen_create, name='kitchenForm'),
     path('dishform/', views.dish_create, name='dishForm'),
+    path('dishes/<int:pk>', views.dish_detail, name='dish'),
+    path('dishes/<int:pk>/edit', views.dish_edit, name='dish_edit'),
     path('userprofile/<int:pk>', views.user_profile, name='user_profile'),
 ]
 
