@@ -15,7 +15,9 @@
                 </div>
             </div>
             </div>
+            {% if user == kitchen.owner %}
             <a class="col s3 waves-effect waves-light btn addmenu" href="{% url 'dishForm' %}"><p>Add Menu Item</p></a>
+            {% endif %}
         </div>
     <div> 
         <h3>{{kitchen.name}}</h3>
@@ -32,8 +34,10 @@
                       <p>${{dish.price}}</p>
                     </div>
                     <a class="waves-effect waves-light btn">Add to Order</a>
-                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit">Edit</a>
-                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete">Delete</a>
+                    {% if user == kitchen.owner %}
+                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit crud">Edit</a>
+                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete crud">Delete</a>
+                    {% endif %}
             </div>
             {% empty %}
         <p>No Dishes Available</p>
