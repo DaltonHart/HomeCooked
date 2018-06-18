@@ -53,7 +53,8 @@ def kitchens(request):
 
 def kitchen_detail(request, pk):
     kitchen = Kitchen.objects.get(pk=pk)
-    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen})
+    dishes = Dish.objects.filter(kitchen = kitchen)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes})
 
 
 def kitchen_create(request):

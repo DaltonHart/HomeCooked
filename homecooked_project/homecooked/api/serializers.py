@@ -19,8 +19,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     url         = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Profile
-        fields = ('url','id','user', 'name','avatar','bio', 'iscook', 'address')
-        read_only_fields = ['id', 'user']
+        fields = ('url','pk','user', 'name','avatar','bio', 'iscook', 'address')
+        read_only_fields = ['pk', 'user']
         
     def get_url(self, obj):
         request = self.context.get("request")
@@ -31,8 +31,8 @@ class KitchenSerializer(serializers.ModelSerializer):
    class Meta:
         owner = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='user-detail')
         model = Kitchen
-        fields = ('url', 'id','owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
-        read_only_fields = ['id', 'owner']
+        fields = ('url', 'pk','owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
+        read_only_fields = ['pk', 'owner']
    def get_url(self, obj):
         request = self.context.get("request")
         return obj.get_api_url(request=request)
@@ -40,8 +40,8 @@ class KitchenSerializer(serializers.ModelSerializer):
 class DishSerializer(serializers.ModelSerializer): 
     class Meta:
         model = Dish
-        fields = ('id','kitchen', 'name','image', 'description', 'price', 'cuisine_type', 'dietary')
-        read_only_fields = ['id', 'kitchen']
+        fields = ('pk','kitchen', 'name','image', 'description', 'price', 'cuisine_type', 'dietary')
+        read_only_fields = ['pk', 'kitchen']
     
     def get_url(self, obj):
         request = self.context.get("request")
@@ -53,8 +53,8 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = ('id','order_by', 'order_from','order_time', 'items')
-        read_only_fields = ['id']
+        fields = ('pk','order_by', 'order_from','order_time', 'items')
+        read_only_fields = ['pk']
     
     def get_url(self, obj):
         request = self.context.get("request")

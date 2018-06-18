@@ -41,14 +41,14 @@
                     {% endblock %}
             </main>
                 <aside class="col s2">
-                        <h4>Cart:</h4>
+                        <h5>Cart:</h5>
                         <ol>
-                            <li>Item Name : Price </li>
-                            <a href="#">remove</a>
-                            <li>Item Name : Price </li>
-                            <a href="#">remove</a>
-                            <li>Item Name : Price </li>
-                            <a href="#">remove</a>
+                            {% for order in orders %}
+                            <li>{}</li>
+                            {% empty %}
+                            <p>Hungry?</p>
+                            <p>Add an item to order right away!</p>
+                            {% endfor %}
                         </ol>
                         <a class="waves-effect waves-light btn">Order</a>
                 </aside>

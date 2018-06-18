@@ -254,7 +254,21 @@ h3, h4, h5{
     overflow: scroll;
 }
 
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 1.2em;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+h4{
+    text-align: center;
+}
+/* 
 input[type=checkbox]
 {
   -webkit-appearance:checkbox;
-}
+} */

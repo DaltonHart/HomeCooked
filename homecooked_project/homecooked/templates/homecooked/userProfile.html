@@ -9,14 +9,9 @@
         <h5 class="accountTitles">Name: {{profile.user.username}}</h5> 
         <h5 class="accountTitles">Email: {{profile.user.email}}</h5> 
         <h5 class="accountTitles">Address: {{profile.address}}</h5> 
-        <h5 class="accountTitles">Bio: {{profile.bio}}</h5>    
-    </section>
-    <section class="customerAside">
-        <h3 class="accountNavTitle">{{profile.user.username}}</h2>
-            <a href=""><h5 class="accountNav"></h5></a>
-            <a href=""><h5 class="accountNav">Address and Phone</h5></a>
-            <a href=""><h5 class="accountNav">Orders</h5></a>
-    </section>    
+        <h5 class="accountTitles">Bio: {{profile.bio}}</h5>
+        <h5 class="accountTitles">Kitchen: {{profile.user.kitchen.name}}</h5>    
+    </section>  
 </div>
 
 {% endblock %}
