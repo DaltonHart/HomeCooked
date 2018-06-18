@@ -83,6 +83,7 @@ img {
 .customerAside{
     grid-row: 1/2;
     grid-column: 2/3;
+    text-align: center;
 }
 
 .customerMainContainer {
@@ -95,6 +96,8 @@ img {
     color: darkgrey;
 }
 
-.profileBio {
-    font-size: 1em;
+.accountAvatar {
+    margin: 0 auto;
+    height: 20%;
+    width: auto;
 }
