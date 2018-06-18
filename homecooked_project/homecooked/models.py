@@ -27,7 +27,7 @@ class Profile(models.Model):
 class Kitchen(models.Model):
 	owner = models.OneToOneField(User,
         on_delete=models.CASCADE,
-        primary_key=True,parent_link=True)
+        primary_key=True)
 	# owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='owner')
 	name = models.CharField(blank=True, max_length=60)
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
