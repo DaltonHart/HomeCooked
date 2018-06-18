@@ -52,8 +52,8 @@ def kitchens(request):
     return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes})
 
 def kitchen_detail(request, pk):
-    kitchen = Kitchen.objects.get(id=pk)
-    return render(request, 'homecooked/kitchen_detail.html', {'kitchen': kitchen})
+    kitchen = Kitchen.objects.get(pk=pk)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen})
 
 
 def kitchen_create(request):

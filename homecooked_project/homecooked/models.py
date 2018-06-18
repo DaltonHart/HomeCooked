@@ -73,6 +73,7 @@ class Order(models.Model):
 	order_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='order_by')
 	order_from = models.ForeignKey(Kitchen, on_delete=models.CASCADE, related_name='order_from')
 	order_time = models.DateTimeField(auto_now_add=True)
+	order_item = models.ManyToManyField(Dish)
 	items = ArrayField(models.CharField(blank=True, max_length=60))
 
 	def __str__(self):

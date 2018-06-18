@@ -253,3 +253,8 @@ h3, h4, h5{
     background-color: white;
     overflow: scroll;
 }
+
+input[type=checkbox]
+{
+  -webkit-appearance:checkbox;
+}

@@ -29,14 +29,14 @@
 
     {% for kitchen in kitchens %}
     <div id='{{kitchen.pk}}' class="card-panel hoverable sticky-action kitchenCard">
-        <div class="card-image waves-effect waves-block waves-light">
+      <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="{{kitchen.logo.url}}">
         </div>
         <div class="card-content">
           <h4>{{kitchen.name}}</h4>
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
-          <a class="waves-effect waves-light btn">View Menu</a>
+          <a href="{% url 'kitchen' pk=kitchen.pk%}" class="waves-effect waves-light btn">View Menu</a>
         </div>
       </div>
       {%empty%}

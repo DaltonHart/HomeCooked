@@ -22,10 +22,9 @@ class registrationForm(UserCreationForm):
 
 
 class ProfileForm(forms.ModelForm):
-
     class Meta:
         model = Profile
-        fields = ('name', 'avatar','bio','address')
+        fields = ('name', 'avatar','bio','address', 'iscook')
 
 #Form(request.POST, request.FILES, instance = company)
 class KitchenForm(forms.ModelForm):
