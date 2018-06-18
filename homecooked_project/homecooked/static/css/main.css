@@ -59,10 +59,89 @@ nav {
     display: grid;
     background-image: url(/static/images/customerOver.jpg);
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-position: center;
     background-size: 100%;
     background-color: red;
     height: 90vh;
+=======
+    background-size:cover ;
+    max-height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.customer h3 {
+    text-align: right;
+}
+.cook h3 {
+    text-align: left;
+}
+
+.btn-overlay{
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+#cookBtnDiv{
+    order: 3;
+    margin-left:auto; 
+    width: 5em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none;
+}
+#custBtnDiv{
+    order: 1;
+    margin-right:auto; 
+    width: 5em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none;
+}
+.btnCarrot{
+    font-size: 5em;
+    color: whitesmoke;
+    height: 100%;
+    vertical-align: middle;
+}
+#cookBtn{
+    width: 5.5em;
+    background-color:rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#custBtn{
+    width: 5.5em;
+    background-color:rgba(0, 0, 0, 0.2); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.custDetail{
+	order: 3;
+	width: 40%;
+    display: none;
+    height: 100%
+
+
+}
+.custCatcher,.cookCatcher{
+    order: 2;
+    color: antiquewhite;
+}
+.cookDetail{
+    order: 1;
+	width: 60%;
+    display: none;
+    max-height: 100%;
+    font-family: 'Oswald', sans-serif;
+>>>>>>> eb78195fef943ce0a750080fbfdc41338edd81b8
 }
 
 .cook .catcher{
@@ -105,8 +184,15 @@ nav {
     padding: 2em;
 }
 
+<<<<<<< HEAD
 .detail {
     display: grid;
+=======
+.btn {
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-color: #6EB257;
+>>>>>>> eb78195fef943ce0a750080fbfdc41338edd81b8
 }
 .area1 , .area2, .area3 {
     display: grid;
@@ -140,3 +226,33 @@ nav {
 .accountTitles {
     color: darkgray
 }
+<<<<<<< HEAD
+=======
+
+.holder {
+    background-color: white;
+    overflow: scroll;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 1.2em;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+h4{
+    text-align: center;
+}
+
+.edit{
+    background-color: rgb(212, 212, 7);
+}
+
+.delete{
+    background-color: rgb(196, 8, 8);
+}
+>>>>>>> eb78195fef943ce0a750080fbfdc41338edd81b8

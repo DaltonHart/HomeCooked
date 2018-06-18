@@ -4,7 +4,7 @@
 <div class="main-container">
         <br/>
         <div class="row">
-            <div class="col s12">
+            <div class="col s9">
             <div class="row">
                 <div class="autocomplete-div">
                 <div class="input-field col s11">
@@ -15,11 +15,12 @@
                 </div>
             </div>
             </div>
+            <a class="col s3 waves-effect waves-light btn addmenu" href="{% url 'dishForm' %}"><p>Add Menu Item</p></a>
         </div>
-    <div section="Menu"> 
+    <div> 
         <h3>{{kitchen.name}}</h3>
         <h4>~Menu~</h4>
-
+        <div class="menu"> 
             {% for dish in dishes %}
             <div class="card-panel hoverable sticky-action">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -31,10 +32,15 @@
                       <p>${{dish.price}}</p>
                     </div>
                     <a class="waves-effect waves-light btn">Add to Order</a>
+                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit">Edit</a>
+                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete">Delete</a>
             </div>
+            {% empty %}
+        <p>No Dishes Available</p>
             {% endfor %}
     </div>
 
+</div>
 </div>
 
 {% endblock %}
