@@ -4,8 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import registrationForm, ProfileForm, KitchenForm, DishForm
-from .models import Profile, Kitchen, Dish
-
+from .models import User, Kitchen, Profile, Dish
 # Create your views here.
 def landing(request):
     return render(request, 'homecooked/landing.html')

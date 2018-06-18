@@ -7,6 +7,7 @@
     <title>HomeCooked</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/userIndex.css' %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/main.css' %}" />
@@ -23,9 +24,8 @@
         <section class="login">
             {% block userinfo %}
             {% if user.is_authenticated %}
-               <p>id:{{user.id}}</p> 
               <p>Welcome Back  <span><a href="/userprofile/{{user.id}}">{{ user.username }}!</a></span></p>
-              <p><a href="{% url 'logout' %}">logout</a></p>
+              <p><a href="{% url 'logout' %}">Logout</a></p>
             {% else %}
               <p>Start cooking and eating today.</p>
               <a href="{% url 'login' %}">Login</a>
@@ -34,9 +34,25 @@
             {% endblock %}
         </section>
     </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <section class="main row">
+            <main class="col s10">
+                    {% block content %}
+                    {% endblock %}
+                </main>
+            
+                <aside class="col s2">
+                        <h4>Cart:</h4>
+                        <ol>
+                            <li>Item Name : Price </li>
+                            <a href="#">remove</a>
+                            <li>Item Name : Price </li>
+                            <a href="#">remove</a>
+                            <li>Item Name : Price </li>
+                            <a href="#">remove</a>
+                        </ol>
+                        <a class="waves-effect waves-light btn">Order</a>
+                </aside>
+    </section>
+    
 </body>
 </html>
