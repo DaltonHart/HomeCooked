@@ -28,7 +28,7 @@ def signup(request):
 
 def profile_create(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -71,7 +71,7 @@ def kitchen_create(request):
 
 def dish_create(request):
     if request.method == 'POST':
-        form = DishForm(request.POST)
+        form = DishForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             owner = request.user
