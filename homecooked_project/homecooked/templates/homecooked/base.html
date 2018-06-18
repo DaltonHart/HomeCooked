@@ -35,10 +35,11 @@
         </section>
     </header>
     <section class="main row">
+        {% if user.is_authenticated %}
             <main class="col s10">
-                    {% block content %}
+                    {% block loggedin %}
                     {% endblock %}
-                </main>
+            </main>
             
                 <aside class="col s2">
                         <h4>Cart:</h4>
@@ -52,6 +53,10 @@
                         </ol>
                         <a class="waves-effect waves-light btn">Order</a>
                 </aside>
+                {% else %}
+                {% block content %}
+                    {% endblock %}
+                {%endif%}
     </section>
     
 </body>
