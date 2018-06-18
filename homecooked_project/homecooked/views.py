@@ -105,6 +105,6 @@ def dish_edit(request, pk):
 
 def dish_delete(request, pk):
     print('LOOK AT ME HERE!',request)
-    redirectkitchen = Dish.objects.filter(kitchen_id = Dish.pk)
+    redirectkitchen = Dish.objects.get(pk=pk).kitchen
     Dish.objects.get(pk=pk).delete()
-    return redirect('kitchen', pk=redirectkitchen)
+    return redirect('kitchen', pk=redirectkitchen.pk)
