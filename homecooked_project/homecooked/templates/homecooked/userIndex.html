@@ -7,7 +7,7 @@
     <br/>
 
     <div>
-        <div class="col s12">
+        <div class="col s9">
         <div class="row">
             <div class="autocomplete-div">
             <div class="input-field col s11">
@@ -18,10 +18,10 @@
             </div>
         </div>
         </div>
+        <a class="col s3 waves-effect waves-light btn" href="{% url 'kitchenForm' %}"><p>Start Your Kitchen</p></a>
     </div>
 
-
-<div>
+<div class="col s12">
     <h3>~ Popular Kitchens ~</h3>
 
     <hr>
@@ -36,13 +36,12 @@
           <h4>{{kitchen.name}}</h4>
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
-          <a class="waves-effect waves-light btn">View Menu</a>
+          <a href="{% url 'kitchen' pk=kitchen.pk %}" class="waves-effect waves-light btn">View Menu</a>
         </div>
       </div>
       {%empty%}
       <h1>sorry no kitchens in you're area at this time :(</h1>
      {% endfor %}
-     <a href="{% url 'kitchenForm' %}"><h1>Make A kitchen</h1></a>
     </section>
 
 <h3>~ Popular Dishes ~</h3>
@@ -67,38 +66,5 @@
         <hr>
 </div>
 </div>
-<<<<<<< HEAD
 </div>
-=======
-
-<script>
-  $('.kitchenCard').on('click', function(e){
-		e.preventDefault();
-    console.log(e.currentTarget.id);
-    //go to kitchen detail
-    id = e.currentTarget.id
-	})
-</script>
-<!-- 
-  <script> 
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-  });
-
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: {
-        "Mommys Donut Shop": null,
-        "Muffin Peeps": null,
-        "Gargoyle Express": 'https://placehold.it/250x250'
-      },
-    });
-  });
-  </script> -->
-
->>>>>>> 1262f9d2c790906eb80ccf4449c7df50fc4bfa5e
 {% endblock %}
