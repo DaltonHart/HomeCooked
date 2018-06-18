@@ -91,14 +91,20 @@ def dish_detail(request, pk):
 def dish_edit(request, pk):
     dish = Dish.objects.get(pk=pk)
     if request.method == "POST":
-        form = DishForm(request.POST, instance=post)
+        form = DishForm(request.POST, instance=dish)
         if form.is_valid():
             post = form.save(commit=False)
             owner = request.user
             foundkitchen = Kitchen.objects.filter(owner = owner)
             post.kitchen = foundkitchen.first()
             post.save()
-            return redirect('kitchen', pk=kitchen.pk)
+            return redirect('kitchen', pk=dish.kitchen.pk)
     else:
         form = DishForm(instance=dish)
     return render(request, 'homecooked/dishform.html', {'form': form})
+
+def dish_delete(request, pk):
+    print('LOOK AT ME HERE!',request)
+    redirectkitchen = Dish.objects.filter(kitchen_id = pk).first()
+    Dish.objects.get(pk=pk).delete()
+    return redirect('kitchen', pk=redirectkitchen)

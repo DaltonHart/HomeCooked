@@ -31,7 +31,8 @@
                       <p>${{dish.price}}</p>
                     </div>
                     <a class="waves-effect waves-light btn">Add to Order</a>
-                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn">Edit</a>
+                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit">Edit</a>
+                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete">Delete</a>
             </div>
             {% empty %}
         <p>No Dishes Available</p>
