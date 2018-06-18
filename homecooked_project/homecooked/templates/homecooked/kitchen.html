@@ -16,10 +16,10 @@
             </div>
             </div>
         </div>
-    <div section="Menu"> 
+    <div> 
         <h3>{{kitchen.name}}</h3>
         <h4>~Menu~</h4>
-
+        <div class="menu"> 
             {% for dish in dishes %}
             <div class="card-panel hoverable sticky-action">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -32,9 +32,12 @@
                     </div>
                     <a class="waves-effect waves-light btn">Add to Order</a>
             </div>
+            {% empty %}
+        <p>No Dishes Available</p>
             {% endfor %}
     </div>
 
+</div>
 </div>
 
 {% endblock %}
