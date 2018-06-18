@@ -110,3 +110,17 @@ def dish_delete(request, pk):
     redirectkitchen = Dish.objects.get(pk=pk).kitchen
     Dish.objects.get(pk=pk).delete()
     return redirect('kitchen', pk=redirectkitchen.pk)
+
+def add_dish_to_cart(request, pk):
+    redirectkitchen =  Dish.objects.get(pk=pk).kitchen
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            print("Home KITCHEN LOOK: =>", Dish.objects.get(pk=pk).kitchen)
+            post = form.save(commit=False)
+            post.order_by = request.user
+            post.order_from = Dish.objects.get(pk=pk).kitchen
+            post.order_item = Dish.objects.get(pk=pk)
+            post.save()
+            return redirect('kitchen', pk=redirectkitchen.pk)
+    return redirect('kitchen', pk=redirectkitchen.pk)
