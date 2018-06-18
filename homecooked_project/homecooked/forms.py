@@ -22,8 +22,7 @@ class registrationForm(UserCreationForm):
 
 
 class ProfileForm(forms.ModelForm):
-    iscook = forms.BooleanField()
-    
+    iscook = forms.BooleanField(required=False)
     class Meta:
         model = Profile
         fields = ('name', 'avatar','bio','address', 'iscook')
@@ -41,3 +40,8 @@ class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
         fields = ('name', 'image','description','price','cuisine_type')
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('order_by', 'order_from','order_item','items')

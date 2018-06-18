@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import registrationForm, ProfileForm, KitchenForm, DishForm
-from .models import User, Kitchen, Profile, Dish
+from .forms import registrationForm, ProfileForm, KitchenForm, DishForm, OrderForm
+from .models import User, Kitchen, Profile, Dish, Order
 # Create your views here.
 def landing(request):
     if request.user.is_authenticated == True:
@@ -48,13 +48,15 @@ def kitchens(request):
     print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
+    orders = Order.objects.filter(order_by = request.user)
     print('look here',dishes)
-    return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes})
+    return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes, 'orders': orders})
 
 def kitchen_detail(request, pk):
     kitchen = Kitchen.objects.get(pk=pk)
     dishes = Dish.objects.filter(kitchen = kitchen)
-    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes})
+    orders = Order.objects.filter(order_by = request.user)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders})
 
 
 def kitchen_create(request):
@@ -108,3 +110,17 @@ def dish_delete(request, pk):
     redirectkitchen = Dish.objects.filter(kitchen_id = pk).first()
     Dish.objects.get(pk=pk).delete()
     return redirect('kitchen', pk=redirectkitchen)
+
+def add_dish_to_cart(request, pk):
+    redirectkitchen =  Dish.objects.get(pk=pk).kitchen
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            print("Home KITCHEN LOOK: =>", Dish.objects.get(pk=pk).kitchen)
+            post = form.save(commit=False)
+            post.order_by = request.user
+            post.order_from = Dish.objects.get(pk=pk).kitchen
+            post.order_item = Dish.objects.get(pk=pk)
+            post.save()
+            return redirect('kitchen', pk=redirectkitchen.pk)
+    return redirect('kitchen', pk=redirectkitchen.pk)
