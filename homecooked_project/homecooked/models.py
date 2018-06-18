@@ -42,7 +42,7 @@ class Kitchen(models.Model):
 
 	class Meta:
 		ordering = ['name']
-		
+
 	def get_api_url(self, request=None):
 		return api_reverse("homecooked-api:kitchen-rud", kwargs={'pk': self.pk}, request=request)
 
@@ -63,6 +63,10 @@ class Dish(models.Model):
 	class Meta:
 		ordering = ['name']
 
+	def get_api_url(self, request=None):
+		return api_reverse("homecooked-api:dish-rud", kwargs={'pk': self.pk}, request=request)
+
+
 
 
 class Order(models.Model):
@@ -76,3 +80,5 @@ class Order(models.Model):
 
 	class Meta:
 		ordering = ['-order_by']
+	def get_api_url(self, request=None):
+		return api_reverse("homecooked-api:order-rud", kwargs={'pk': self.pk}, request=request)

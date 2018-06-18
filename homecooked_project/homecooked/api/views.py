@@ -83,16 +83,84 @@ class KitchenPostRudView(generics.RetrieveUpdateDestroyAPIView):
     def get_serializer_context(self, *args, **kwargs):
         return {"request": self.request}
 
-# class DishViewSet(mixins.CreateModelMixin, generics.ListAPIView):
-#     """
-#     API endpoint that allows groups to be viewed or edited.
-#     """
-#     queryset = Dish.objects.all()
-#     serializer_class = DishSerializer
+class DishApiView(mixins.CreateModelMixin, generics.ListAPIView):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    lookup_field         = 'pk'
+    serializer_class      = DishSerializer
+    def get_queryset(self):
+        all_Dishs = Dish.objects.all()
+        query = self.request.GET.get("q")
+        if query is not None:
+            all_Dishs = all_Dishs.filter(
+                    Q(title__icontains=query)|
+                    Q(content__icontains=query)
+                    ).distinct()
+        return all_Dishs
 
-# class OrderViewSet(mixins.CreateModelMixin, generics.ListAPIView):
-#     """
-#     API endpoint that allows groups to be viewed or edited.
-#     """
-#     queryset = Order.objects.all()
-#     serializer_class = OrderSerializer
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}
+
+class DishPostRudView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field         = 'pk'
+    serializer_class      = DishSerializer
+    permission_classes   = [IsOwnerOrReadOnly]
+
+    def get_queryset(self):
+        return Dish.objects.all()
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}
+
+class OrderViewSet(mixins.CreateModelMixin, generics.ListAPIView):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+
+class OrderApiView(mixins.CreateModelMixin, generics.ListAPIView):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    lookup_field         = 'pk'
+    serializer_class      = OrderSerializer
+    def get_queryset(self):
+        all_order = Order.objects.all()
+        query = self.request.GET.get("q")
+        if query is not None:
+            all_order = all_order.filter(
+                    Q(title__icontains=query)|
+                    Q(content__icontains=query)
+                    ).distinct()
+        return all_order
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}
+
+
+
+class OrderPostRudView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field         = 'pk'
+    serializer_class      = OrderSerializer
+    permission_classes   = [IsOwnerOrReadOnly]
+
+    def get_queryset(self):
+        return Dish.objects.all()
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}

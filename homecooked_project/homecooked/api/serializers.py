@@ -22,9 +22,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ('url','id','user', 'name','avatar','bio', 'iscook', 'address')
         read_only_fields = ['id', 'user']
         
-        def get_url(self, obj):
-            request = self.context.get("request")
-            return obj.get_api_url(request=request)
+    def get_url(self, obj):
+        request = self.context.get("request")
+        return obj.get_api_url(request=request)
 
 class KitchenSerializer(serializers.ModelSerializer):
    url         = serializers.SerializerMethodField(read_only=True)
@@ -33,10 +33,9 @@ class KitchenSerializer(serializers.ModelSerializer):
         model = Kitchen
         fields = ('url', 'id','owner', 'name','logo', 'description','address', 'rating', 'does_deliver')
         read_only_fields = ['id', 'owner']
-    
-        def get_url(self, obj):
-            request = self.context.get("request")
-            return obj.get_api_url(request=request)
+   def get_url(self, obj):
+        request = self.context.get("request")
+        return obj.get_api_url(request=request)
 
 class DishSerializer(serializers.ModelSerializer): 
     class Meta:

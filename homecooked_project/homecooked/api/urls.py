@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import ProfileApiView, ProfilePostRudView, KitchenApiView, KitchenPostRudView
+from .views import ProfileApiView, ProfilePostRudView, KitchenApiView, KitchenPostRudView, DishApiView, DishPostRudView, OrderApiView, OrderPostRudView
 #DishViewSet,OrderViewSet
 
 
@@ -21,6 +21,13 @@ urlpatterns = [
 	url(r'^kitchens/$', KitchenApiView.as_view(), name='kitchen-listcreate'),
     url(r'^kitchens/(?P<pk>\d+)/$', KitchenPostRudView.as_view(), name='kitchen-rud'),
 
-#  url(r'^', include(router.urls))
+	#Dish url
+	url(r'^dishes/$', DishApiView.as_view(), name='dish-listcreate'),
+    url(r'^dishes/(?P<pk>\d+)/$', DishPostRudView.as_view(), name='dish-rud'),
+
+	#order url
+	url(r'^order/$', DishApiView.as_view(), name='order-listcreate'),
+    url(r'^order/(?P<pk>\d+)/$', DishPostRudView.as_view(), name='order-rud'),
+
 ]
 

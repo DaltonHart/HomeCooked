@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include('homecooked.api.urls'), name='homecooked-api'),
+    url(r'^api/',include(('homecooked.api.urls', 'homecooked'), namespace='homecooked-api')),
+    # url(r'^api/', include('homecooked.api.urls', namespace='homecooked-api')),
+    #url(r'^reviews/', include(('reviews.urls', 'reviews'), namespace='reviews')),
 ]
