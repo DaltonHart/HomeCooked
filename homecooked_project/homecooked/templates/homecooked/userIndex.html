@@ -7,7 +7,7 @@
     <br/>
 
     <div>
-        <div class="col s12">
+        <div class="col s9">
         <div class="row">
             <div class="autocomplete-div">
             <div class="input-field col s11">
@@ -18,10 +18,10 @@
             </div>
         </div>
         </div>
+        <a class="col s3 waves-effect waves-light btn" href="{% url 'kitchenForm' %}"><p>Start Your Kitchen</p></a>
     </div>
 
-
-<div>
+<div class="col s12">
     <h3>~ Popular Kitchens ~</h3>
 
     <hr>
@@ -36,13 +36,12 @@
           <h4>{{kitchen.name}}</h4>
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
-          <a class="waves-effect waves-light btn">View Menu</a>
+          <a href="{% url 'kitchen' pk=kitchen.pk %}" class="waves-effect waves-light btn">View Menu</a>
         </div>
       </div>
       {%empty%}
       <h1>sorry no kitchens in you're area at this time :(</h1>
      {% endfor %}
-     <a href="{% url 'kitchenForm' %}"><h1>Make A kitchen</h1></a>
     </section>
 
 <h3>~ Popular Dishes ~</h3>

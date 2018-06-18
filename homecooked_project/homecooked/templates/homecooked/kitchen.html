@@ -16,25 +16,25 @@
             </div>
             </div>
         </div>
-
     <div section="Menu"> 
-        <div class="menuTitle">{{cook_menu.kitchen.name}} Menu</div>
-        <div class="kitchenDishes"> 
-            <img class="dishImage" src=""/>
-            <h6 class="dishName">{{cook_menu.name}}</h6>
-            <p class="dishCuisineType">{{cook_menu.cuisine_type}}</p>
-            <p class="dishPrice">{{cook_menu.price}}</p>
-            <p class="dishDescription">{{cook_menu.description}}</p>
-            <p class="dishDietary">{{cook_menu.dietary}}</p>
-            <p><a href="">add to bag</p>
-        </div>
+        <h3>{{kitchen.name}}</h3>
+        <h4>~Menu~</h4>
+
+            {% for dish in dishes %}
+            <div class="card-panel hoverable sticky-action">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="{{dish.image.url}}">
+                    </div>
+                    <div class="card-content">
+                      <h5>{{dish.name}}</h5>
+                      <p>{{dish.description}}</p>
+                      <p>${{dish.price}}</p>
+                    </div>
+                    <a class="waves-effect waves-light btn">Add to Order</a>
+            </div>
+            {% endfor %}
     </div>
 
-    <div section="kitchenInfo">
-        <h4 class="kitchenName">{{cook_menu.kitchen.name}}</h4>
-        <p class="kitchenRating">{{cook_menu.kitchen.rating}}</p>
-        <p class="kitchenDescription">{{cook_menu.kitchen.description}}</p>
-    </div>
 </div>
 
 {% endblock %}
