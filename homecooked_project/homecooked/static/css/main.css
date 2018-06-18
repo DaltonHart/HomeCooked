@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 !important;
+    background-color: black;
 }
 header{
     position: fixed;
@@ -57,7 +58,6 @@ nav {
 
 
 main{
-    /* border: 2px solid orange; */
     height: 88vh;
     display: grid;
 }
@@ -67,35 +67,40 @@ main{
 /* landing page css */
 
 .overview{
-    /* border: 2px solid blueviolet; */
-    height: 100%;
+    height: 90vh;
+    max-height: 90vh;
     display: flex;
+    top: 0;
 }
 
 .cook{
     background-image: url(/static/images/cookOver.jpg);
     background-repeat: no-repeat;
-    /* background-position: center; */
     background-size: cover;
-    /* background-color: blue; */
-    /* border: 2px solid yellow; */
     max-height: 100%;
     width: 50%;
     display: flex;
     padding: 0.5em;
 }
+
 .customer{
     background-image: url(/static/images/customerOver.jpg);
     background-repeat: no-repeat;
-    /* background-position: center; */
     background-size:cover ;
-    /* background-color: red; */
-    /* border: 2px solid rebeccapurple; */
     max-height: 100%;
     width: 50%;
     display: flex;
     padding: 0.5em;
+    text-align: right;
 }
+
+.customer h3 {
+    text-align: right;
+}
+.cook h3 {
+    text-align: left;
+}
+
 .btn-overlay{
     background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
 }
@@ -147,10 +152,10 @@ main{
 
 .custDetail{
 	order: 3;
-	width: 60%;
+	width: 40%;
     display: none;
     height: 100%
-	/* padding: 3em; */
+
 
 }
 .custCatcher,.cookCatcher{
@@ -162,14 +167,10 @@ main{
 	width: 60%;
     display: none;
     max-height: 100%;
-    /* border: 1px solid red; */
-	/* padding: 3em; */
-
+    font-family: 'Oswald', sans-serif;
 }
 
 .detailImg{
-    /* width: 30%;
-    height: 20%; */
 	box-shadow: 2px 2px 4px #000000;
 	margin: 1em;
 }
@@ -179,18 +180,21 @@ main{
     padding: 1em;
     background: white;
     overflow-wrap: break-word;
-	/* width: 30%;
-	height: 15%; */
     box-shadow: 2px 2px 4px #000000;
 }
 
 .bottomLine{
-    padding-top: 70%;
+    padding-top: 45%;
     font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
 }
+
+.custCatcher .bottomLine{
+    padding-top: 40%;
+    font-size: 4em;
+}
 .topLine{
-    font-size: 5em;
+    font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
 }
 
@@ -199,7 +203,6 @@ main{
 	display: flex;
     flex-direction: row;
     height: 33%;
-	/* border: 1px red solid; */
 }
 
 .info_box > img{
@@ -211,9 +214,6 @@ main{
 	width: 40%;
     height: 80%;
 }
-
-
-
 
 aside{
     background-color: #000000 !important;
@@ -239,4 +239,17 @@ a{
 
 h3, h4, h5{
     font-family: 'Merriweather', serif;
+}
+.overview {
+    max-height: 85vh;
+}
+
+.container {
+    background-color: white;
+    padding: 2em;
+}
+
+.holder {
+    background-color: white;
+    overflow: scroll;
 }
