@@ -3,8 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import registrationForm, ProfileForm, KitchenForm, DishForm
-from .models import User, Kitchen, Profile, Dish
+from .forms import registrationForm, ProfileForm, KitchenForm, DishForm, OrderForm
+from .models import User, Kitchen, Profile, Dish, Order
 # Create your views here.
 def landing(request):
     if request.user.is_authenticated == True:
@@ -28,7 +28,7 @@ def signup(request):
 
 def profile_create(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -48,13 +48,15 @@ def kitchens(request):
     print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
+    orders = Order.objects.filter(order_by = request.user)
     print('look here',dishes)
-    return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes})
+    return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes, 'orders': orders})
 
 def kitchen_detail(request, pk):
     kitchen = Kitchen.objects.get(pk=pk)
     dishes = Dish.objects.filter(kitchen = kitchen)
-    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes})
+    orders = Order.objects.filter(order_by = request.user)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders})
 
 
 def kitchen_create(request):

@@ -14,6 +14,7 @@ urlpatterns = [
     path('kitchenform/', views.kitchen_create, name='kitchenForm'),
     path('dishform/', views.dish_create, name='dishForm'),
     path('dishes/<int:pk>', views.dish_detail, name='dish'),
+    path('dishes/<int:pk>/add_to_cart', views.add_dish_to_cart, name='add_dish_to_cart'),
     path('dishes/<int:pk>/delete', views.dish_delete, name='dish_delete'),
     path('dishes/<int:pk>/edit', views.dish_edit, name='dish_edit'),
     path('userprofile/<int:pk>', views.user_profile, name='user_profile'),

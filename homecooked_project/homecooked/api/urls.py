@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^dishes/(?P<pk>\d+)/$', DishPostRudView.as_view(), name='dish-rud'),
 
 	#order url
-	url(r'^order/$', DishApiView.as_view(), name='order-listcreate'),
-    url(r'^order/(?P<pk>\d+)/$', DishPostRudView.as_view(), name='order-rud'),
+	url(r'^order/$', OrderApiView.as_view(), name='order-listcreate'),
+    url(r'^order/(?P<pk>\d+)/$', OrderPostRudView.as_view(), name='order-rud'),
 
 ]
 

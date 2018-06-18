@@ -55,6 +55,7 @@ class Dish(models.Model):
 	price = models.FloatField()
 	cuisine_type = models.CharField(max_length=15) 
 	dietary = ArrayField(models.CharField(max_length=10), null=True)
+	
 
 
 	def __str__(self):
@@ -74,9 +75,10 @@ class Order(models.Model):
 	order_from = models.ForeignKey(Kitchen, on_delete=models.CASCADE, related_name='order_from')
 	order_time = models.DateTimeField(auto_now_add=True)
 	items = ArrayField(models.CharField(blank=True, max_length=60))
-
+	order_item = models.ForeignKey(Dish,on_delete=models.CASCADE, related_name='dishes')
+# 
 	def __str__(self):
-		return self.name
+		return self.order_item.name
 
 	class Meta:
 		ordering = ['-order_by']

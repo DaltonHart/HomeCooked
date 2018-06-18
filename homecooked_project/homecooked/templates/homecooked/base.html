@@ -40,11 +40,11 @@
                     {% block loggedin %}
                     {% endblock %}
             </main>
-                <aside class="col s2">
+                <aside id='reload_cart' class="col s2">
                         <h5>Cart:</h5>
                         <ol>
                             {% for order in orders %}
-                            <li>{}</li>
+                            <li>{{order.order_item.name}}</li>
                             {% empty %}
                             <p>Hungry?</p>
                             <p>Add an item to order right away!</p>

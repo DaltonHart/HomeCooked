@@ -160,7 +160,7 @@ class OrderPostRudView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes   = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
-        return Dish.objects.all()
+        return Order.objects.all()
 
     def get_serializer_context(self, *args, **kwargs):
         return {"request": self.request}

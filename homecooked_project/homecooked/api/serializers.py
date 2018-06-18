@@ -48,9 +48,6 @@ class DishSerializer(serializers.ModelSerializer):
         return obj.get_api_url(request=request)
 
 class OrderSerializer(serializers.ModelSerializer):
-    order_by = serializers.ReadOnlyField(source='owner') 
-    Kitchen  = serializers.ReadOnlyField(source='order_from') 
-
     class Meta:
         model = Order
         fields = ('pk','order_by', 'order_from','order_time', 'items')
