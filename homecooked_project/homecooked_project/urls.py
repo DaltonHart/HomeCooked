@@ -18,6 +18,17 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', include('homecooked.urls'))
 ]
 
+=======
+    path('', include('homecooked.urls')),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/',include(('homecooked.api.urls', 'homecooked'), namespace='homecooked-api')),
+    # url(r'^api/', include('homecooked.api.urls', namespace='homecooked-api')),
+    #url(r'^reviews/', include(('reviews.urls', 'reviews'), namespace='reviews')),
+]
+>>>>>>> 93de259f9824542f5fe1023b1d53c077c0b1f354

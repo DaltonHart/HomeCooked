@@ -27,10 +27,12 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ('name', 'avatar','bio','address')
 
+#Form(request.POST, request.FILES, instance = company)
 class KitchenForm(forms.ModelForm):
 
     class Meta:
         model = Kitchen
+        exclude = ["user"]
         fields = ('name', 'logo','description','address')
 
 class DishForm(forms.ModelForm):
