@@ -1,12 +1,7 @@
 {% extends 'homecooked/base.html' %} 
 
 {% block content %}
-{% if user.is_authenticated %}
- 
-    {% block loggedin %}
-    {% endblock %}
 
-{% else %}
 <div class="overview ">
 
         <div class="cook">
@@ -75,5 +70,4 @@
         </div>
         
     </div>
-{% endif %}
 {% endblock %}
