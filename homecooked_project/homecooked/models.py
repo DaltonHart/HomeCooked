@@ -4,7 +4,8 @@ from django.templatetags.static import static
 from django.conf import settings
 from django.db import models
 from django.core.validators import MaxValueValidator
-
+from django.urls import reverse
+from rest_framework.reverse import reverse as api_reverse
 
 class Profile(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userprofile')
@@ -19,9 +20,15 @@ class Profile(models.Model):
 
 	class Meta:
 		ordering = ['name']
+	    
+	def get_api_url(self, request=None):
+		return api_reverse("homecooked-api:profile-rud", kwargs={'pk': self.pk}, request=request)
 
 class Kitchen(models.Model):
-	owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='owner')
+	owner = models.OneToOneField(User,
+        on_delete=models.CASCADE,
+        primary_key=True,parent_link=True)
+	# owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='owner')
 	name = models.CharField(blank=True, max_length=60)
 	logo = models.ImageField(upload_to = 'img/', default = 'img/None/no-img.gif')
 	description = models.TextField(max_length=140)
@@ -35,6 +42,10 @@ class Kitchen(models.Model):
 
 	class Meta:
 		ordering = ['name']
+		
+	def get_api_url(self, request=None):
+		return api_reverse("homecooked-api:kitchen-rud", kwargs={'pk': self.pk}, request=request)
+
 
 class Dish(models.Model):
 	kitchen = models.ForeignKey(Kitchen, on_delete=models.CASCADE, related_name='dish')
