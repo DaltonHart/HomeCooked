@@ -2,9 +2,11 @@
 {% load static %}
 
 {% block loggedin %}
-<div class="main-container">
+<div>
+
     <br/>
-    <div class="row">
+
+    <div>
         <div class="col s12">
         <div class="row">
             <div class="autocomplete-div">
@@ -19,8 +21,8 @@
     </div>
 
 
-<div class="container">
-    <h3>~ Popular ~</h3>
+<div>
+    <h3>~ Popular Kitchens ~</h3>
 
     <hr>
 <section class="highest-rated">
@@ -31,19 +33,19 @@
           <img class="activator" src="{{kitchen.logo.url}}">
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{kitchen.name}}<i class="material-icons right"></i></span>
-        </div>
-        <div class="card-reveal">
+          <h4>{{kitchen.name}}</h4>
           <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
           <p>{{kitchen.description}}</p>
+          <a class="waves-effect waves-light btn">View Menu</a>
         </div>
       </div>
+      {%empty%}
+      <h1>sorry no kitchens in you're area at this time :(</h1>
     {% endfor %}
 
     </section>
 
-
-<h3>~ Delivery ~</h3>
+<h3>~ Popular Dishes ~</h3>
   <hr>
 <div class="dishes">
     <br/>
@@ -53,39 +55,17 @@
           <img class="activator" src="{{dish.image.url}}">
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{dish.name}}<i class="material-icons right"></i></span>
-          <p><a href="#">${{dish.price}}</a></p>
+          <h5>{{dish.name}}</h5>
           <p>{{dish.description}}</p>
+          <p>${{dish.price}}</p>
+          <p><a href="#">{{dish.kitchen.name}}</a></p>
         </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{dish.kitchen.name}}<i class="material-icons right"></i></span>
-          
-        </div>
+        <a class="waves-effect waves-light btn">Add to Order</a>
       </div>
 
     {% endfor %}
         <hr>
 </div>
 </div>
-<!-- 
-  <script> 
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-  });
-
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: {
-        "Mommys Donut Shop": null,
-        "Muffin Peeps": null,
-        "Gargoyle Express": 'https://placehold.it/250x250'
-      },
-    });
-  });
-  </script> -->
-
+</div>
 {% endblock %}

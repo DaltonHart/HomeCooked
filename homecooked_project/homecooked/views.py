@@ -30,27 +30,28 @@ def profile_create(request):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
-            return redirect('kitchen')
+            return redirect('kitchens')
     else:
         form = ProfileForm()
     return render(request, 'homecooked/profileform.html', {'form': form})
 
-def kitchen(request):
+def user_profile(request, pk):
+    user = request.user
+    found_profile = Profile.objects.filter(user = user).first()
+    print("found Profile", found_profile)
+    return render(request, 'homecooked/userProfile.html', {'profile': found_profile})
+
+def kitchens(request):
+    print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
     print('look here',dishes)
     return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes})
 
-def user_profile(request, pk):
-    profile = Profile.objects.get(id=pk)
-    return render(request, 'homecooked/userProfile.html', {'profile': profile})
+def kitchen_detail(request, pk):
+    kitchen = Kitchen.objects.get(id=pk)
+    return render(request, 'homecooked/kitchen_detail.html', {'kitchen': kitchen})
 
-def kitchen(request):
-    return render(request, 'homecooked/userIndex.html')
-
-def cook_menu(request):
-    # cook_menu = Dish.objects.get(id=pk)
-    return render(request, 'homecooked/cookMenu.html')
 
 def kitchen_create(request):
     if request.method == 'POST':
@@ -59,7 +60,7 @@ def kitchen_create(request):
             post = form.save(commit=False)
             post.owner = request.user
             post.save()
-            return redirect('kitchen')
+            return redirect('kitchens')
     else:
         form = KitchenForm()
     return render(request, 'homecooked/kitchenform.html', {'form': form})
@@ -73,7 +74,7 @@ def dish_create(request):
             foundkitchen = Kitchen.objects.filter(owner = owner)
             post.kitchen = foundkitchen.first()
             post.save()
-            return redirect('kitchen')
+            return redirect('kitchens')
     else:
         form = DishForm()
     return render(request, 'homecooked/dishform.html', {'form': form})

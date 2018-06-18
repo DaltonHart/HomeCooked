@@ -89,3 +89,7 @@ img {
     display: grid;
     margin-left: 3em;
 }
+
+h3 {
+    font-family: 'Krona One', sans-serif;
+}
