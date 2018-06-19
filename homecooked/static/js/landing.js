@@ -36,9 +36,27 @@ $(document).ready(function($){
 	
 	});
 
-	$('#add').on('click', function(){
-		console.log('clicke ')
-		$('#reload_cart').load(document.URL +  ' #reload_cart');
+	$('#add_dish').on('click', function(e){
+		console.log('clicked ')
+		// $('#reload_cart').load(document.URL +  ' #reload_cart');
+		$.ajax(
+			{
+				type:"POST",
+				url: "/api/order",
+				data:{
+						"order_by": null,
+						"order_from": null,
+						"order_item": null
+					
+				},
+				success: function( data ) 
+				{
+					console.log('success', data)
+				},
+				error:function(error){
+					console.log('success', error)
+				}
+			 })
 	})
 });
 

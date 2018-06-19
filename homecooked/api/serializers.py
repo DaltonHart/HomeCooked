@@ -50,7 +50,7 @@ class DishSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ('pk','order_by', 'order_from','order_time', 'items')
+        fields = ('pk','order_by', 'order_from','order_time', 'order_item')
         read_only_fields = ['pk']
     
     def get_url(self, obj):

@@ -263,6 +263,17 @@ h4{
 }
 
 .edit{
-    background-color: yellow;
-    color: #000000;
+    background-color: rgb(212, 212, 7);
+}
+
+.delete{
+    background-color: rgb(196, 8, 8);
+}
+
+.openorders{
+    border: 2px solid #000000;
+}
+
+.row .col .s3{
+ width: 24%;
 }
