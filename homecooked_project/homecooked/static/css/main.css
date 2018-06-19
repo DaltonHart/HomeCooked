@@ -111,7 +111,6 @@ main{
     width: 5em;
     display: flex;
     align-items: center;
-    /* z-index: 50;  */
     height: 100%;
     border: none;
 }
@@ -121,7 +120,6 @@ main{
     width: 5em;
     display: flex;
     align-items: center;
-    /* z-index: 50;  */
     height: 100%;
     border: none;
 }
@@ -133,20 +131,16 @@ main{
 }
 #cookBtn{
     width: 5.5em;
-    /* height: 100%; */
     background-color:rgba(0, 0, 0, 0.2);
     background-repeat: no-repeat;
     background-size: cover;
-    /* padding: 0.5em; */
     
 }
 #custBtn{
     width: 5.5em;
-    /* height: 100%; */
     background-color:rgba(0, 0, 0, 0.2); 
     background-repeat: no-repeat;
     background-size: cover;
-    /* padding: 0.5em; */
 }
 
 
@@ -224,7 +218,7 @@ aside{
 .btn {
     margin: 0 auto;
     margin-bottom: 1em;
-    background-color: #6EB257 !important;
+    background-color: #6EB257;
 }
 .main{
     margin-top: 7%;
@@ -252,4 +246,34 @@ h3, h4, h5{
 .holder {
     background-color: white;
     overflow: scroll;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 1.2em;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+h4{
+    text-align: center;
+}
+
+.edit{
+    background-color: rgb(212, 212, 7);
+}
+
+.delete{
+    background-color: rgb(196, 8, 8);
+}
+
+.openorders{
+    border: 2px solid #000000;
+}
+
+.row .col .s3{
+ width: 24%;
 }

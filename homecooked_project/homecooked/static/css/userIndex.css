@@ -5,7 +5,8 @@
 .highest-rated {
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: left;
+    flex-direction: row;
     width: 95%;
     margin: 0 1.2em;
     margin: 0 auto;
@@ -69,7 +70,8 @@ img {
 .dishes{
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: left;
+    flex-direction: row;
     width: 95%;
     margin: 0 auto;
     margin-bottom: 5vh;
@@ -92,4 +94,22 @@ img {
 
 h3 {
     font-family: 'Krona One', sans-serif;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 1.2em;
+    margin: 0 auto;
+}
+
+#id_iscook{
+    height: 100px; 
+    width: 100px; 
+    background-color: green; 
+    display: block;
 }

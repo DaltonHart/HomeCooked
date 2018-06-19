@@ -4,7 +4,7 @@
 {% block loggedin %}
 <div class="container">
     <h2>Add your menu item.</h2>
-    <form method="post">
+    <form enctype="multipart/form-data" method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <!-- <input type="hidden" name="kitchen_id" placeholder="{{user.kitchen.all.first}}" value="{{user.kitchen.all.first}}"> -->

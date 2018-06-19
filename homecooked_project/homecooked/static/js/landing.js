@@ -1,10 +1,11 @@
 $(document).ready(function($){
-	console.log('sanity check one')
-	cook = $('.cook')
-	customer = $('.customer')
+
+	console.log('sanity check one');
+	cook = $('.cook');
+	customer = $('.customer');
 	
 	$('#custBtn').on('click', (e)=>{
-		console.log('check cust btn clicked', $('body').width() )
+		console.log('check cust btn clicked', $('body').width() );
 		if(customer.width() > $('body').width()/2){
 			console.log('customer`s width is in 100%')
 			$('.custDetail').hide()
@@ -33,7 +34,11 @@ $(document).ready(function($){
 			$('.cookDetail').fadeIn(2000 );;
 		}
 	
+	});
+
+	$('#add').on('click', function(){
+		console.log('clicke ')
+		$('#reload_cart').load(document.URL +  ' #reload_cart');
 	})
-
-
 });
+
