@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Kitchen, Dish, Order
-from django.forms import CharField, Form, PasswordInput
+from django.forms import CharField, Form, PasswordInput, BooleanField
 
 class registrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -21,8 +21,7 @@ class registrationForm(UserCreationForm):
         return user
 
 
-class ProfileForm(forms.ModelForm):
-    iscook = forms.BooleanField(required=False)
+class ProfileForm(forms.ModelForm):                                     
     class Meta:
         model = Profile
         fields = ('name', 'avatar','bio','address', 'iscook')
@@ -44,4 +43,4 @@ class DishForm(forms.ModelForm):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('order_by', 'order_from','order_item','items')
+        fields = ('order_by', 'order_from','order_item')
