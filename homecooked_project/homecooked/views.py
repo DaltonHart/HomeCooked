@@ -45,18 +45,17 @@ def user_profile(request, pk):
     return render(request, 'homecooked/userProfile.html', {'profile': found_profile})
 
 def kitchens(request):
-    print('CALLING KITCHEN')
     kitchens = Kitchen.objects.all()
     dishes = Dish.objects.all()
     orders = Order.objects.filter(order_by = request.user)
-    print('look here',dishes)
     return render(request, 'homecooked/userIndex.html', {'kitchens': kitchens, 'dishes': dishes, 'orders': orders})
 
 def kitchen_detail(request, pk):
     kitchen = Kitchen.objects.get(pk=pk)
     dishes = Dish.objects.filter(kitchen = kitchen)
     orders = Order.objects.filter(order_by = request.user)
-    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders})
+    openOrders = Order.objects.filter(order_from = request.user.kitchen)
+    return render(request, 'homecooked/kitchen.html', {'kitchen': kitchen, 'dishes':dishes,'orders': orders,'openOrders':openOrders})
 
 
 def kitchen_create(request):
@@ -81,7 +80,7 @@ def dish_create(request):
             foundkitchen = Kitchen.objects.filter(owner = owner)
             post.kitchen = foundkitchen.first()
             post.save()
-            return redirect('kitchens')
+            return redirect('kitchen', pk=foundkitchen.first().pk)
     else:
         form = DishForm()
     return render(request, 'homecooked/dishform.html', {'form': form})
@@ -93,7 +92,7 @@ def dish_detail(request, pk):
 def dish_edit(request, pk):
     dish = Dish.objects.get(pk=pk)
     if request.method == "POST":
-        form = DishForm(request.POST, instance=dish)
+        form = DishForm(request.POST,request.Files, instance=dish)
         if form.is_valid():
             post = form.save(commit=False)
             owner = request.user
@@ -107,9 +106,9 @@ def dish_edit(request, pk):
 
 def dish_delete(request, pk):
     print('LOOK AT ME HERE!',request)
-    redirectkitchen = Dish.objects.filter(kitchen_id = pk).first()
+    redirectkitchen = Dish.objects.get(pk=pk).kitchen
     Dish.objects.get(pk=pk).delete()
-    return redirect('kitchen', pk=redirectkitchen)
+    return redirect('kitchen', pk=redirectkitchen.pk)
 
 def add_dish_to_cart(request, pk):
     redirectkitchen =  Dish.objects.get(pk=pk).kitchen

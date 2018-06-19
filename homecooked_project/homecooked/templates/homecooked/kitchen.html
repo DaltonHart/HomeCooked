@@ -1,47 +1,69 @@
-{% extends 'homecooked/base.html' %} 
-
-{% block loggedin %}
+{% extends 'homecooked/base.html' %} {% block loggedin %}
 <div class="main-container">
-        <br/>
-        <div class="row">
-            <div class="col s12">
+    <br/>
+    <div class="row">
+        <div class="col s9">
             <div class="row">
                 <div class="autocomplete-div">
-                <div class="input-field col s11">
-                <i class="material-icons prefix"></i>
-                <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ search for dishes"class="autocomplete">
-                <label for="autocomplete-input"></label>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix"></i>
+                        <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ search for dishes" class="autocomplete">
+                        <label for="autocomplete-input"></label>
+                    </div>
                 </div>
-                </div>
-            </div>
             </div>
         </div>
-    <div> 
-        <h3>{{kitchen.name}}</h3>
-        <h4>~Menu~</h4>
-        <div class="menu"> 
-            {% for dish in dishes %}
-            <div class="card-panel hoverable sticky-action">
+        {% if user == kitchen.owner %}
+        <a class="col s3 waves-effect waves-light btn addmenu" href="{% url 'dishForm' %}">
+            <p>Add Menu Item</p>
+        </a>
+        {% endif %}
+    </div>
+    <div class="row menuitems">
+        <div class="col s9">
+            <h3>{{kitchen.name}}</h3>
+            <h4>~Menu~</h4>
+            <div class="menu">
+                {% for dish in dishes %}
+                <div class="card-panel hoverable sticky-action">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="{{dish.image.url}}">
+                        <img class="activator" src="{{dish.image.url}}">
                     </div>
                     <div class="card-content">
-                      <h5>{{dish.name}}</h5>
-                      <p>{{dish.description}}</p>
-                      <p>${{dish.price}}</p>
+                        <h5>{{dish.name}}</h5>
+                        <p>{{dish.description}}</p>
+                        <p>${{dish.price}}</p>
                     </div>
-                    <!-- {% url 'add_dish_to_cart' pk=dish.pk%} -->
-                    
-                    <a href="{% url 'add_dish_to_cart' pk=dish.pk%}" class="waves-effect waves-light btn" id='add' >Add to Order</a>
-                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit">Edit</a>
-                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete">Delete</a>
+                    <a class="waves-effect waves-light btn">Add to Order</a>
+                    {% if user == kitchen.owner %}
+                    <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit crud">Edit</a>
+                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete crud">Remove</a>
+                    {% endif %}
+                </div>
+                {% empty %}
+                <p>No Dishes Available</p>
+                {% endfor %}
             </div>
-            {% empty %}
-        <p>No Dishes Available</p>
-            {% endfor %}
-    </div>
 
-</div>
+        </div>
+        {% if user == kitchen.owner %}
+        <div class="col s3 openorders">
+            <h4>Open Orders</h4>
+            <ol>
+                {% for openOrder in openOrders %}
+                <li>Order From:{{openOrder.order_by.username}}</li>
+                <p>Order Item:{{openOrder.order_item}}</p>
+                <p>Order Time:{{openOrder.order_time}}</p>
+                <p>Contact Email:<a href="mailto:{{openOrder.order_by.email}}"> {{openOrder.order_by.email}} </a></p>
+                <hr>
+
+                {% empty %}
+                <p>no open orders</p>
+                {% endfor %}
+            </ol>
+        </div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

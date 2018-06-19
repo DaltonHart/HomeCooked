@@ -76,7 +76,7 @@ class Order(models.Model):
 	order_time = models.DateTimeField(auto_now_add=True)
 	items = ArrayField(models.CharField(blank=True, max_length=60))
 	order_item = models.ForeignKey(Dish,on_delete=models.CASCADE, related_name='dishes')
-# 
+
 	def __str__(self):
 		return self.order_item.name
 

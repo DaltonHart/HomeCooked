@@ -43,12 +43,6 @@
                 <aside id='reload_cart' class="col s2">
                         <h5>Cart:</h5>
                         <ol>
-                            {% for order in orders %}
-                            <li>{{order.order_item.name}}</li>
-                            {% empty %}
-                            <p>Hungry?</p>
-                            <p>Add an item to order right away!</p>
-                            {% endfor %}
                         </ol>
                         <a class="waves-effect waves-light btn">Order</a>
                 </aside>
