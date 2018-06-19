@@ -1,0 +1,17 @@
+{% extends 'homecooked/base.html' %} {% block loggedin %}
+
+<div class="card-panel hoverable sticky-action">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="{{dish.image.url}}">
+    </div>
+    <div class="card-content">
+        <h5>{{dish.name}}</h5>
+        <p>{{dish.description}}</p>
+        <p>${{dish.price}}</p>
+    </div>
+    <a class="waves-effect waves-light btn">Add to Order</a>
+    <a class="waves-effect waves-light btn">Edit</a>
+</div>
+
+
+{% endblock %}

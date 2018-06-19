@@ -1,0 +1,67 @@
+{% extends 'homecooked/base.html' %} 
+
+{% block content %}
+
+<div class="overview ">
+
+        <div class="cook">
+            <section id="cookBtnDiv" class="slideBtns">
+                <div class="btn-overlay">
+                        <button id="cookBtn">
+                            <span class="btnCarrot cookCarrot"> > </span>
+                        </button>
+                </div> 
+                
+            </section>
+            <section class="cookCatcher catcher ">
+                <h3 class="topLine"> Connecting Cooks</h3>
+                <h3 class="bottomLine"> to Customers</h3>
+            </section>
+            <section class="cookDetail detail">
+                <article class="area1 info_box">
+                    <img class="detailImg"  src="/static/images/Screen Shot 2018-06-18 at 9.55.19 AM.png">
+                    <p class='detailP'> HomeCooked allows you to open your Kitchen to the world. </p>
+                </article>
+                <article class="area2 cookArea2 info_box">
+                        <p class='detailP'> Network with customers in your area and build a Menu around what you want to cook. </p>
+                        <img class="detailImg"  src="/static/images/Screen Shot 2018-06-18 at 9.55.27 AM.png">
+                </article>
+                <article class="area3 info_box">
+                    <img class="detailImg"  src="/static/images/Screen Shot 2018-06-18 at 9.55.34 AM.png">
+                    <p class='detailP'> Customers will find your meals and pay you directly for them. From there you deliver the meal or designate a pickup. </p>
+                </article>
+            </section>
+        </div>
+        
+        <div class="customer ">
+            <section class="custDetail detail ">
+                <article class="area1 info_box ">
+                    <img class="detailImg" src="/static/images/Screen Shot 2018-06-18 at 10.01.50 AM.png">
+                    <p class='detailP'> Tired of restraunt food with no soul? HomeCooked allows you to find Local Home Chefs. </p>
+                </article>
+                <article class="area2 custArea2 info_box">
+                    <p class='detailP'> Browse regularly changing menus that are made from home chefs in your area.</p>
+                    <img class="detailImg"  src="/static/images/Screen Shot 2018-06-18 at 10.02.12 AM.png">
+                
+                </article>
+                <article class="area3 info_box ">
+                    <img class="detailImg"  src="/static/images/Screen Shot 2018-06-18 at 10.04.24 AM.png">
+                    <p class='detailP'> Fresh Home cooked meals are just a click away! </p>
+                </article>
+            </section>
+            <section class="custCatcher catcher">
+                <h3 class="topLine">Bringing home </h3>
+                <h3 class="topLine">cooked meals </h3>
+                <h3 class="bottomLine">to you</h3>
+            </section>
+            <section id='custBtnDiv' class="slideBtns"> 
+                    <div class="btn-overlay">
+                            <button id="custBtn">
+                                    <span class="btnCarrot custCarrot"> < </span>
+                            </button>
+                    </div>    
+            </section>
+        </div>
+        
+    </div>
+{% endblock %}

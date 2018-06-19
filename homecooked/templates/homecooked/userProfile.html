@@ -1,0 +1,17 @@
+{% extends 'homecooked/base.html' %} 
+
+{% block loggedin %}
+
+<div class="customerMainContainer container">
+    <section class="customerAccount"> 
+        <h3 class="accountTitle"> Your Account </h5>
+        <img class="accountAvatar" src="{{profile.avatar.url}}"/>
+        <h5 class="accountTitles">Name: {{profile.user.username}}</h5> 
+        <h5 class="accountTitles">Email: {{profile.user.email}}</h5> 
+        <h5 class="accountTitles">Address: {{profile.address}}</h5> 
+        <h5 class="accountTitles">Bio: {{profile.bio}}</h5>
+        <h5 class="accountTitles">Kitchen: {{profile.user.kitchen.name}}</h5>    
+    </section>  
+</div>
+
+{% endblock %}

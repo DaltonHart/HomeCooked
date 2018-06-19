@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+html{
+      height: 100%;
+    }
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    background-color: black;
+}
+header{
+    position: fixed;
+    z-index: 100;
+    color: white;
+    background-color:black;
+    display: grid;
+    height: 12%;
+    width: 100%;
+}
+.row {
+    margin: 0;
+}
+.login {
+    grid-row: 1/2;
+    grid-column: 4/5;
+    padding: .4em .6em .2em;
+    margin: 0;
+    text-align: right;
+    font-size: 1.5em;
+    max-height: 100%;
+   }
+p{
+    margin: 0;
+}
+
+
+nav {
+    grid-row: 1/2;
+    grid-column: 1/2;
+   }
+
+.logo p{
+       margin: 0;
+       padding: .2em .3em;
+       font-size: 2.7em;
+       font-display: bottom;
+       font-family: 'Amatic SC', cursive;
+       color: white;
+}
+.logo a {
+    color: white;
+    font-family: 'Amatic SC', cursive;
+}
+
+
+main{
+    height: 88vh;
+    display: grid;
+}
+
+
+
+/* landing page css */
+
+.overview{
+    height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    top: 0;
+}
+
+.cook{
+    background-image: url(/static/images/cookOver.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 0.5em;
+}
+
+.customer{
+    background-image: url(/static/images/customerOver.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    max-height: 100%;
+    width: 50%;
+    display: flex;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.customer h3 {
+    text-align: right;
+}
+.cook h3 {
+    text-align: left;
+}
+
+.btn-overlay{
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+#cookBtnDiv{
+    order: 3;
+    margin-left:auto; 
+    width: 5em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none;
+}
+#custBtnDiv{
+    order: 1;
+    margin-right:auto; 
+    width: 5em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none;
+}
+.btnCarrot{
+    font-size: 5em;
+    color: whitesmoke;
+    height: 100%;
+    vertical-align: middle;
+}
+#cookBtn{
+    width: 5.5em;
+    background-color:rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#custBtn{
+    width: 5.5em;
+    background-color:rgba(0, 0, 0, 0.2); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.custDetail{
+	order: 3;
+	width: 40%;
+    display: none;
+    height: 100%
+
+
+}
+.custCatcher,.cookCatcher{
+    order: 2;
+    color: antiquewhite;
+}
+.cookDetail{
+    order: 1;
+	width: 60%;
+    display: none;
+    max-height: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
+.detailImg{
+	box-shadow: 2px 2px 4px #000000;
+	margin: 1em;
+}
+.detailP{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+    padding: 1em;
+    background: white;
+    overflow-wrap: break-word;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.bottomLine{
+    padding-top: 45%;
+    font-size: 4em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.custCatcher .bottomLine{
+    padding-top: 40%;
+    font-size: 4em;
+}
+.topLine{
+    font-size: 4em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+.info_box{
+	display: flex;
+    flex-direction: row;
+    height: 33%;
+}
+
+.info_box > img{
+	width: 50%;
+    height: 90%;
+}
+
+.info_box > p{
+	width: 40%;
+    height: 80%;
+}
+
+aside{
+    background-color: #000000 !important;
+    color: white;
+    height: 100%;
+}
+
+.btn {
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-color: #6EB257;
+}
+.main{
+    margin-top: 7%;
+}
+.card-content p {
+    margin: 1em 0;
+}
+
+a{
+    color: #6EB257;
+}
+
+h3, h4, h5{
+    font-family: 'Merriweather', serif;
+}
+.overview {
+    max-height: 85vh;
+}
+
+.container {
+    background-color: white;
+    padding: 2em;
+}
+
+.holder {
+    background-color: white;
+    overflow: scroll;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 1.2em;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+h4{
+    text-align: center;
+}
+
+.edit{
+    background-color: rgb(212, 212, 7);
+}
+
+.delete{
+    background-color: rgb(196, 8, 8);
+}
+
+.openorders{
+    border: 2px solid #000000;
+}
+
+.row .col .s3{
+ width: 24%;
+}
