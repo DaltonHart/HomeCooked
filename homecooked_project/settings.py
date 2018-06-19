@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import dj_database_url
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,8 +26,8 @@ SECRET_KEY = 'nx5f5l#n2)uri73r5m23han3c1w6okkw4db7d%p1#mytuy&luz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp']
+# ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -145,6 +145,8 @@ REST_FRAMEWORK = {
 LOGIN_REDIRECT_URL = 'kitchens'
 LOGOUT_REDIRECT_URL = 'landing'
 
-import dj_database_url
+
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+
+django_heroku.settings(locals())
