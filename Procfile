@@ -1,3 +1,3 @@
 
-web: gunicorn homecooked.wsgi
+web: gunicorn homecooked_project.wsgi
 
