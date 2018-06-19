@@ -40,7 +40,7 @@
         </div>
       </div>
       {%empty%}
-      <h1>sorry no kitchens in you're area at this time :(</h1>
+      <h1>Sorry no kitchens in you're area at this time :(</h1>
      {% endfor %}
     </section>
 
@@ -57,7 +57,7 @@
           <h5>{{dish.name}}</h5>
           <p>{{dish.description}}</p>
           <p>${{dish.price}}</p>
-          <p><a href="#">{{dish.kitchen.name}}</a></p>
+          <p><a href="{% url 'kitchen' pk=dish.kitchen.pk %}">{{dish.kitchen.name}}</a></p>
         </div>
         <a class="waves-effect waves-light btn">Add to Order</a>
       </div>

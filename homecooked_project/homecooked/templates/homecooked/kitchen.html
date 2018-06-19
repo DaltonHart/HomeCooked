@@ -37,7 +37,7 @@
                     <a class="waves-effect waves-light btn">Add to Order</a>
                     {% if user == kitchen.owner %}
                     <a href="{% url 'dish_edit' pk=dish.pk %}" class="waves-effect waves-light btn edit crud">Edit</a>
-                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete crud">Delete</a>
+                    <a href="{% url 'dish_delete' pk=dish.pk %}" class="waves-effect waves-light btn delete crud">Remove</a>
                     {% endif %}
                 </div>
                 {% empty %}

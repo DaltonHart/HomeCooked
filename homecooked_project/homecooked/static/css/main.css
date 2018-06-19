@@ -273,3 +273,7 @@ h4{
 .openorders{
     border: 2px solid #000000;
 }
+
+.row .col .s3{
+ width: 24%;
+}
