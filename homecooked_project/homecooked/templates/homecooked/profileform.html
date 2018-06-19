@@ -1,0 +1,15 @@
+{% extends 'homecooked/base.html' %}
+
+
+{% block loggedin %}
+<div class="container">
+    <h2>Profile Info</h2>
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button type="submit">Create Profile</button>
+    </form>
+</div>
+  
+{% endblock %}

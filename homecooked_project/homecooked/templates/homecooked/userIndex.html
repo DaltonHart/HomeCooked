@@ -1,0 +1,70 @@
+{% extends 'homecooked/base.html' %} 
+{% load static %}
+
+{% block loggedin %}
+<div>
+
+    <br/>
+
+    <div>
+        <div class="col s9">
+        <div class="row">
+            <div class="autocomplete-div">
+            <div class="input-field col s11">
+            <i class="material-icons prefix"></i>
+            <input type="text" id="autocomplete-input" placeholder="{{user.username}}~ what are you hungry for?"class="autocomplete">
+            <label for="autocomplete-input"></label>
+            </div>
+            </div>
+        </div>
+        </div>
+        <a class="col s3 waves-effect waves-light btn" href="{% url 'kitchenForm' %}"><p>Start Your Kitchen</p></a>
+    </div>
+
+<div class="col s12">
+    <h3>~ Popular Kitchens ~</h3>
+
+    <hr>
+<section class="highest-rated">
+
+    {% for kitchen in kitchens %}
+    <div id='{{kitchen.pk}}' class="card-panel hoverable sticky-action kitchenCard">
+      <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{kitchen.logo.url}}">
+        </div>
+        <div class="card-content">
+          <h4>{{kitchen.name}}</h4>
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right"></i></span>
+          <p>{{kitchen.description}}</p>
+          <a href="{% url 'kitchen' pk=kitchen.pk %}" class="waves-effect waves-light btn">View Menu</a>
+        </div>
+      </div>
+      {%empty%}
+      <h1>sorry no kitchens in you're area at this time :(</h1>
+     {% endfor %}
+    </section>
+
+<h3>~ Popular Dishes ~</h3>
+  <hr>
+<div class="dishes">
+    <br/>
+    {% for dish in dishes %}
+    <div class="card-panel hoverable sticky-action">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{dish.image.url}}">
+        </div>
+        <div class="card-content">
+          <h5>{{dish.name}}</h5>
+          <p>{{dish.description}}</p>
+          <p>${{dish.price}}</p>
+          <p><a href="#">{{dish.kitchen.name}}</a></p>
+        </div>
+        <a class="waves-effect waves-light btn">Add to Order</a>
+      </div>
+
+    {% endfor %}
+        <hr>
+</div>
+</div>
+</div>
+{% endblock %}
