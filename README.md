@@ -3,6 +3,8 @@
 *A Peer to Peer network for people to order delicious Home Cooked meals and for Home Cooks to find customers.*
 
 [Link to project hosted on Heroku]()
+[Presentation](https://docs.google.com/presentation/d/1H3MpdweuySZfdv9kjaTTzsW9-s8-vumVu8gFo800ZxA/edit?usp=sharing)
+
 
 ## Technologies Used
 
